@@ -3,14 +3,35 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "My Pill Pal" %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-
+    <div class="icon-bar five-up">
+      <a class="item">
+        <img src="../assets/img/images/fi-home.svg" >
+        <label>Home</label>
+      </a>
+      <a class="item">
+        <img src="../assets/img/images/fi-bookmark.svg" >
+        <label>Bookmark</label>
+      </a>
+      <a class="item">
+        <img src="../assets/img/images/fi-info.svg" >
+        <label>Info</label>
+      </a>
+      <a class="item">
+        <img src="../assets/img/images/fi-mail.svg" >
+        <label>Mail</label>
+      </a>
+      <a class="item">
+        <img src="../assets/img/images/fi-like.svg" >
+        <label>Like</label>
+      </a>
+    </div>
     <%= yield %>
 
   </body>
