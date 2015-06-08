@@ -1,6 +1,23 @@
-  <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-          <h2 id="modalTitle">Awesome. I have it.</h2>
-          <p class="lead">Your couch.  It is mine.</p>
-          <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-  </div>
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <form data-abide>
+    <div class="name-field">
+      <label>Username <small>required</small>
+        <input type="text" required pattern="alpha alphanumeric">
+      </label>
+      <small class="error">Name is required and must contain at least one letter.</small>
+    </div>
+    <div class="password-field">
+      <label>Password <small>required</small>
+        <input type="password" id="password" required pattern="alpha_numeric">
+      </label>
+      <small class="error">Your password must at least one letter and one number.</small>
+    </div>
+    <div class="password-confirmation-field">
+      <label>Confirm Password <small>required</small>
+        <input type="password" required pattern="alpha_numeric" data-equalto="password">
+      </label>
+      <small class="error">The password did not match</small>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
