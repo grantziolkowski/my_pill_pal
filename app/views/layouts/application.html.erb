@@ -18,7 +18,7 @@
       </a>
       <a class="item">
         <img src="../assets/img/images/fi-bookmark.svg" >
-        <label>Bookmark</label>
+        <label>Forum</label>
       </a>
       <a class="item">
         <img src="../assets/img/images/fi-info.svg" >
@@ -28,9 +28,10 @@
         <img src="../assets/img/images/fi-mail.svg" >
         <label>Mail</label>
       </a>
-      <a class="item">
+      <a class="item" href="#" data-reveal-id="myModal">
         <img src="../assets/img/images/fi-like.svg" >
-        <label>Like</label>
+        <label>Sign In</label>
+        <%= render 'layouts/signin_modal' %>
       </a>
     </div>
     <%= yield %>
