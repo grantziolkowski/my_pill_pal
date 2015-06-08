@@ -1,23 +1,20 @@
-<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <form data-abide>
+<div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <%= form_for :user, url: signin_path, :html => {"data-abide" => ''} do |f| %>
     <div class="name-field">
-      <label>Username <small>required</small>
-        <input type="text" required pattern="alpha alphanumeric">
-      </label>
+      <%= f.label(:user) {format('Username')} %>
+      <%= f.text_field :username, :html => {"required" => '', "pattern" => "alpha_numeric"} %>
       <small class="error">Name is required and must contain at least one letter.</small>
     </div>
     <div class="password-field">
-      <label>Password <small>required</small>
-        <input type="password" id="password" required pattern="alpha_numeric">
-      </label>
-      <small class="error">Your password must at least one letter and one number.</small>
+      <%= f.label(:user) {format('Password')} %>
+      <%= f.password_field :password, id: :password, :html => {"required" => '', "pattern" => "alpha_numeric"} %>
+      <small class="error">Your password can only contain letters and numbers.</small>
     </div>
     <div class="password-confirmation-field">
-      <label>Confirm Password <small>required</small>
-        <input type="password" required pattern="alpha_numeric" data-equalto="password">
-      </label>
+      <%= f.label(:user) {format('Confirm Password')} %>
+      <%= f.password_field :password, id: :password, :html => {"required" => '', "pattern" => "alpha_numeric", "data-equalto"=> "password"} %>
       <small class="error">The password did not match</small>
     </div>
-    <button type="submit">Submit</button>
-  </form>
+    <%= f.submit 'Submit', class: 'button' %>
+  <% end %>
 </div>
