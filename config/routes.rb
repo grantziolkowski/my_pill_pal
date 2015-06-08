@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'signin' => 'sessions#new'
   post 'signin' => 'sessions#create'
   get 'signout' => 'sessions#destroy'
-  get 'signup'  => 'users#new'
+  post 'signup'  => 'users#create'
   root 'users#show'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,5 +1,5 @@
 <div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <%= form_for :user, url: signin_path, :html => {"data-abide" => ''} do |f| %>
+  <%= form_for :user, url: signup_path, :html => {"data-abide" => ''} do |f| %>
     <div class="name-field">
       <%= f.label(:user) {format('Username')} %>
       <%= f.text_field :username, :html => {"required" => '', "pattern" => "alpha_numeric"} %>
