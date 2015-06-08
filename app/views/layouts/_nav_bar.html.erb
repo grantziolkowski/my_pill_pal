@@ -17,11 +17,11 @@
   </a>
   <a class="item" href="#" data-reveal-id="myModal">
     <img src="../assets/img/images/fi-like.svg" >
-    <% if current_user %>
+    <% if !current_user %>
       <label>Sign In</label>
       <%= render 'layouts/signin_modal' %>
     <% else %>
-      <label>Signout</label>
+      <label> Sign Out</label>
     <% end %>
   </a>
 </div>
