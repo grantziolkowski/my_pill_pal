@@ -1,4 +1,4 @@
-<h1>Welcome, <%= @user.username %> </h1>
+<h1>Welcome, <%= @user.username if @user %> </h1>
 <div id="calendar">
   <div class="row" id="calendar_days">
     <dl class="sub-nav">
@@ -21,6 +21,9 @@
       <div class="small-2 columns panel" data-equalizer-watch></div>
       <div class="small-2 columns panel" data-equalizer-watch></div>
     </div>
+  </div>
+  <div id="sidebar"%>
+    <%= render @medications %>
   </div>
 </div>
 

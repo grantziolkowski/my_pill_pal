@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @medications = UserMedication.where(user: @user)
     # api_call = PillFillApiCall.new
     # @response = api_call.request
   end
