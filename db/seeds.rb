@@ -7,7 +7,7 @@ m5 = Medication.create(name: "Prilosec", dosage: '20mg', alias: 'Omeprazole', ur
 m6 = Medication.create(name: "Azithromycin", dosage: '500mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a697037.html')
 m7 = Medication.create(name: "Amoxicillin", dosage: '500 mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a685001.html')
 m8 = Medication.create(name: "Glucophage", dosage: '2000mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a696005.html', alias: 'Metformin')
-m9 = Medication.create(name: "Hydrochlorothiazide", '50mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a682571.html')
+m9 = Medication.create(name: "Hydrochlorothiazide", dosage: '50mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a682571.html')
 
 UserMedication.create(user: user, medication: m1)
 UserMedication.create(user: user, medication: m2)

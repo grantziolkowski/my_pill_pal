@@ -10,7 +10,11 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @medications = UserMedication.where(user: @user)
+    @medicaitons = []
+    ums = UserMedication.where(user: @user)
+    ums.each do |user_med|
+      @medications << user_med.medication
+    end
     # api_call = PillFillApiCall.new
     # @response = api_call.request
   end
