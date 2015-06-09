@@ -1,3 +1,25 @@
-<h1>Users</h1>
+<h1>Welcome, <%= @user.username %> </h1>
+<div id="calendar">
+  <div class="row" id="calendar_days">
+    <dl class="sub-nav">
+      <dd><a href="#">Monday</a></dd>
+      <dd><a href="#">Tuesday</a></dd>
+      <dd><a href="#">Wednesday</a></dd>
+      <dd><a href="#">Thursday</a></dd>
+      <dd><a href="#">Friday</a></dd>
+      <dd><a href="#">Saturday</a></dd>
+      <dd><a href="#">Sunday</a></dd>
+    </dl>
+  </div>
+  <div class="row" id="pill_bins">
+    <div class="small-2 columns"></div>
+    <div class="small-2 columns"></div>
+    <div class="small-2 columns"></div>
+    <div class="small-2 columns"></div>
+    <div class="small-2 columns"></div>
+    <div class="small-2 columns"></div>
+    <div class="small-2 columns"></div>
+  </div>
+</div>
 <%= @response %>
 

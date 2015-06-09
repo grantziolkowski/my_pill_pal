@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = current_user
     api_call = PillFillApiCall.new
     @response = api_call.request
   end
