@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+user = User.create(username: "Grant", password: "123")
+m1 = Medication.create(name: "Hydrocodone", dosage: "5mg", url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a601006.html')
+m2 = Medication.create(name: "Lisinopril", dosage: '20mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a692051.html')
+m3 = Medication.create(name: "Synthroid", dosage: '50mcg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a682461.html', alias: 'Levothyroxine')
+m4 = Medication.create(name: "Norvasc", alias: 'Amlodipine', dosage: '5mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a692044.html')
+m5 = Medication.create(name: "Prilosec", dosage: '20mg', alias: 'Omeprazole', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a693050.html')
+m6 = Medication.create(name: "Azithromycin", dosage: '500mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a697037.html')
+m7 = Medication.create(name: "Amoxicillin", dosage: '500 mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a685001.html')
+m8 = Medication.create(name: "Glucophage", dosage: '2000mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a696005.html', alias: 'Metformin')
+m9 = Medication.create(name: "Hydrochlorothiazide", '50mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a682571.html')
+
+UserMedication.create(user: user, medication: m1)
+UserMedication.create(user: user, medication: m2)
+UserMedication.create(user: user, medication: m3)
+UserMedication.create(user: user, medication: m4)
+UserMedication.create(user: user, medication: m5)
+UserMedication.create(user: user, medication: m6)
+UserMedication.create(user: user, medication: m7)
+UserMedication.create(user: user, medication: m8)
+UserMedication.create(user: user, medication: m9)

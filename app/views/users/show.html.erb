@@ -2,24 +2,25 @@
 <div id="calendar">
   <div class="row" id="calendar_days">
     <dl class="sub-nav">
-      <dd><a href="#">Monday</a></dd>
-      <dd><a href="#">Tuesday</a></dd>
-      <dd><a href="#">Wednesday</a></dd>
-      <dd><a href="#">Thursday</a></dd>
-      <dd><a href="#">Friday</a></dd>
-      <dd><a href="#">Saturday</a></dd>
-      <dd><a href="#">Sunday</a></dd>
+      <dd class="small-2 columns"><a href="#">Monday</a></dd>
+      <dd class="small-2 columns"><a href="#">Tuesday</a></dd>
+      <dd class="small-2 columns"><a href="#">Wednesday</a></dd>
+      <dd class="small-2 columns"><a href="#">Thursday</a></dd>
+      <dd class="small-2 columns"><a href="#">Friday</a></dd>
+      <dd class="small-2 columns"><a href="#">Saturday</a></dd>
+      <dd class="small-2 columns"><a href="#">Sunday</a></dd>
     </dl>
   </div>
   <div class="row" id="pill_bins">
-    <div class="small-2 columns"></div>
-    <div class="small-2 columns"></div>
-    <div class="small-2 columns"></div>
-    <div class="small-2 columns"></div>
-    <div class="small-2 columns"></div>
-    <div class="small-2 columns"></div>
-    <div class="small-2 columns"></div>
+    <div class="row" data-equalizer>
+      <div class="small-2 columns panel" data-equalizer-watch></div>
+      <div class="small-2 columns panel" data-equalizer-watch></div>
+      <div class="small-2 columns panel" data-equalizer-watch></div>
+      <div class="small-2 columns panel" data-equalizer-watch></div>
+      <div class="small-2 columns panel" data-equalizer-watch></div>
+      <div class="small-2 columns panel" data-equalizer-watch></div>
+      <div class="small-2 columns panel" data-equalizer-watch></div>
+    </div>
   </div>
 </div>
-<%= @response %>
 

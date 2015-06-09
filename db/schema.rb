@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150608155127) do
 
   create_table "medications", force: :cascade do |t|
     t.string   "name",       null: false
+    t.string   "alias"
     t.integer  "dosage"
     t.string   "url"
     t.datetime "created_at", null: false
