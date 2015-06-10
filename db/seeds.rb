@@ -8,6 +8,7 @@ m6 = Medication.create(name: "Azithromycin", dosage: '500mg', url: 'http://www.n
 m7 = Medication.create(name: "Amoxicillin", dosage: '500 mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a685001.html')
 m8 = Medication.create(name: "Glucophage", dosage: '2000mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a696005.html', alias: 'Metformin')
 m9 = Medication.create(name: "Hydrochlorothiazide", dosage: '50mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a682571.html')
+m10 = Medication.create(name: "Selegiline", dosae: "5mg", url: "http://www.nlm.nih.gov/medlineplus/druginfo/meds/a697046.html")
 
 UserMedication.create(user: user, medication: m1)
 UserMedication.create(user: user, medication: m2)
@@ -18,3 +19,5 @@ UserMedication.create(user: user, medication: m6)
 UserMedication.create(user: user, medication: m7)
 UserMedication.create(user: user, medication: m8)
 UserMedication.create(user: user, medication: m9)
+UserMedication.create(user: user, medication: m10)
+
