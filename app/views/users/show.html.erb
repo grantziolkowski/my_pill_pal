@@ -22,7 +22,7 @@
       <div class="small-2 columns panel" data-equalizer-watch></div>
     </div>
   </div>
-  <div id="sidebar medications"%>
+  <div id="sidebar">
     <%= render @medications %>
   </div>
   <ul class="side-nav right">
@@ -32,4 +32,10 @@
   <li><a href="#">Link 4</a></li>
 </ul>
 </div>
+
+<script type="text/template" id="medications">
+  <ul class="side-nav right">
+    <li><a href="#">{{name}}</a></li>
+  </ul>
+</script>
 

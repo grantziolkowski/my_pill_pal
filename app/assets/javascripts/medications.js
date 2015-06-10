@@ -15,3 +15,10 @@ var App.MedicationsRouter = Backbone.Router.extend({
     $("#medications").html(collectionView.render().el)
   }
 })
+
+var App.Views.Medications = Backbone.Router.extend({
+  template:
+  addAll:
+  addOne:
+  render:
+})
