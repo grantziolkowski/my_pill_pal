@@ -1,11 +1,11 @@
-var App.Routers.Medications = Backbone.Router.extend({
+PillPal.Routers.Medications = Backbone.Router.extend({
   routes: {
     "" : "listMedications"
   },
   listMedications: function() {
-    var medications = new App.Models.Medications();
+    var medications = new PillPal.Models.Medications();
     medications.fetch();
-    var collectionView = new App.Views.Medications({
+    var collectionView = new PillPal.Views.Medications({
       collection: medications});
     $("#sidebar").html(collectionView.render().el)
   }

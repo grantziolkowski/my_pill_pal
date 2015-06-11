@@ -1,8 +1,8 @@
-var App.Models.Medication = Backbone.Model.extend({
-
+PillPal.Models.Medication = Backbone.Model.extend({
+  url: ''
 })
 
-var App.Models.Medications = Backbone.Collection.extend({
-  model: App.Models.Medication,
+PillPal.Models.Medications = Backbone.Collection.extend({
+  model: PillPal.Models.Medication,
   url: ''
 })

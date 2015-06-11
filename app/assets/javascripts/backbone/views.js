@@ -1,4 +1,4 @@
-var App.Views.Medications = Backbone.View.extend({
+PillPal.Views.Medications = Backbone.View.extend({
   template: _.template($("#medications").html()),
   initialize: function() {
     this.collection.on("reset", this.addAll())
@@ -8,7 +8,7 @@ var App.Views.Medications = Backbone.View.extend({
     this.collection.each(function() {this.addOne()})
   },
   addOne: function(medication) {
-    var itemView = new App.Views.Medication({model: medication});
+    var itemView = new PillPal.Views.Medication({model: medication});
     ul.append(itemView.render().el)
     },
   render: function () {
@@ -17,11 +17,12 @@ var App.Views.Medications = Backbone.View.extend({
   }
 })
 
-var App.Views.Medication = Backbone.View.extend({
+PillPal.Views.Medication = Backbone.View.extend({
   template: _.template($("#medication").html()),
   tagName: "li",
-  events:
+  events: {
     "click a.destroy" : "destroy"
+  },
   initialize: function() {
     this.model.on("destroy", this.removeThis())
   },

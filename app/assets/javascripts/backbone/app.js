@@ -1,10 +1,10 @@
-$(document).ready(function(){
-    window.App = {
+window.PillPal = {
     Models: {},
     Routers: {},
     Views: {}
-    }
+ }
 
-    window.router = new App.Routers.Medications();
-    Backbone.History.start()
+$(document).ready(function(){
+    window.router = new PillPal.Routers.Medications();
+    Backbone.History.start;
 });
