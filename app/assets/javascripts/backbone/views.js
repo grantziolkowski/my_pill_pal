@@ -1,22 +1,4 @@
-$(function () {
-  window.router = new App.MedicationsRouter()
-  Backbone.History.start()
-})
-
-var App.MedicationsRouter = Backbone.Router.extend({
-  routes: {
-    "" : "listMedications"
-  },
-  listMedications: function() {
-    var medications = new App.Models.Medications;
-    medications.fetch();
-    var collectionView = new App.Views.Medications({
-      collection: medications});
-    $("#sidebar").html(collectionView.render().el)
-  }
-})
-
-var App.Views.Medications = Backbone.Router.extend({
+var App.Views.Medications = Backbone.View.extend({
   template: _.template($("#medications").html()),
   initialize: function() {
     this.collection.on("reset", this.addAll())
@@ -35,7 +17,7 @@ var App.Views.Medications = Backbone.Router.extend({
   }
 })
 
-var App.Views.Medications = Backbone.View.extend({
+var App.Views.Medication = Backbone.View.extend({
   template: _.template($("#medication").html()),
   tagName: "li",
   events:
@@ -53,13 +35,4 @@ var App.Views.Medications = Backbone.View.extend({
     this.$el.html(this.template(this.model.toJSON()));
     return this;
   }
-})
-
-var App.Models.Medication = Backbone.Model.extend({
-
-})
-
-var App.Models.Medications = Backbone.Collection.extend({
-  model: App.Models.Medication,
-  url: ''
 })

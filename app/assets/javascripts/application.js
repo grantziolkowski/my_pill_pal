@@ -11,10 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require foundation
-//= require underscore
-//= require backbone
-//= require_tree .
+//= require lib/underscore
+//= require lib/backbone
+//= require_tree ./backbone
 
 $(function(){ $(document).foundation(); });
