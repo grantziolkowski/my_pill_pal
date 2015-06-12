@@ -1,8 +1,8 @@
 <div class="icon-bar five-up">
-  <a class="item">
-    <img src="../assets/img/images/fi-home.svg" >
-    <label>Home</label>
-  </a>
+  <%= link_to root_path, class:"item" do %>
+       <%= image_tag "app/assets/images/fi-home.svg"%>
+       <%= label_tag "Home"%>
+  <% end %>
   <a class="item">
     <img src="./app/assets/images/fi-comments.svg" >
     <label>Forum</label>
