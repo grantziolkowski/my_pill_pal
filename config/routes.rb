@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'signin' => 'sessions#create'
   get 'signout' => 'sessions#destroy'
 
-  resource :users do
+  resources :users do
     resources :medications, shallow: true
     #only :index, :new, :create are nested
   end

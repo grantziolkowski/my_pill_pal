@@ -9,11 +9,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @medications = []
-    ums = UserMedication.includes(:medication).where(user: @user)
-    ums.map do |user_med|
-      @medications << user_med.medication
+    p "MEEEEEEEEE"
+    if current_user
+      @user = current_user
+      @medications = []
+      ums = UserMedication.includes(:medication).where(user: @user)
+      ums.map do |user_med|
+        @medications << user_med.medication
+      end
+    else
+      redirect_to root_path
     end
     # api_call = PillFillApiCall.new
     # @response = api_call.request

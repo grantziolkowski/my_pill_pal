@@ -11,10 +11,10 @@
     <img src="./app/assets/images/fi-info.svg" >
     <label>Info</label>
   </a>
-  <a class="item">
-    <img src="../assets/img/images/fi-mail.svg" >
-    <label>Profile</label>
-  </a>
+  <%= link_to profile_path, class:"item" do %>
+       <%= image_tag "app/assets/images/fi-torso.svg"%>
+       <%= label_tag "Profile" %>
+  <% end %>
   <% if !current_user %>
     <a class="item" href="#" data-reveal-id="myModal">
       <img src="../assets/img/images/fi-like.svg" >
