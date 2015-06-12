@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'signin' => 'sessions#create'
   get 'signout' => 'sessions#destroy'
   post 'signup'  => 'users#create'
-  root 'users#show'
+  root 'application#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
