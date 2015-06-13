@@ -10,13 +10,12 @@ class UsersController < ApplicationController
 
   def show
     if current_user
-      @user = current_user
       @medications = []
-      ums = UserMedication.includes(:medication).where(user: @user)
+      ums = UserMedication.includes(:medication).where(user: current_user)
       ums.map do |user_med|
         @medications << user_med.medication
       end
-      render json: @user, methods: :medications
+      render json: current_user, methods: :medications
     else
       redirect_to root_path
     end
