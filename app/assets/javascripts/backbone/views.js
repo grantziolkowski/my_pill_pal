@@ -1,6 +1,6 @@
 PillPal.Views.Medications = Backbone.View.extend({
   initialize: function() {
-    template: _.template($("#medications").html()),
+    template: JST["medications/show"],
     this.collection.on("reset", this.addAll())
   },
   addAll: function() {
@@ -19,7 +19,7 @@ PillPal.Views.Medications = Backbone.View.extend({
 
 PillPal.Views.Medication = Backbone.View.extend({
    initialize: function() {
-    template: _.template($("#medication").html())
+    template: JST["medications/show"]
   },
   tagName: "li",
   events: {
