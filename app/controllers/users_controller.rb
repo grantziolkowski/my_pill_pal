@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    p "MEEEEEEEEE"
     if current_user
       @user = current_user
       @medications = []
@@ -17,6 +16,7 @@ class UsersController < ApplicationController
       ums.map do |user_med|
         @medications << user_med.medication
       end
+      render json: @medications
     else
       redirect_to root_path
     end
