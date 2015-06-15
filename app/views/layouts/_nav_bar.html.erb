@@ -3,27 +3,27 @@
       <%= image_tag "" %>
       <%= label_tag "Home" %>
   <% end %>
-  <a class="item">
-    <img src="./app/assets/images/fi-comments.svg" >
-    <label>Forum</label>
-  </a>
-  <a class="item">
-    <img src="./app/assets/images/fi-info.svg" >
-    <label>Info</label>
-  </a>
   <%= link_to profile_path, class:"item" do %>
-       <%= image_tag "app/assets/images/fi-torso.svg"%>
+    <%= image_tag "fi-comments.svg"%>
+    <%= label_tag "Forum" %>
+  <% end %>
+  <%= link_to profile_path, class:"item" do %>
+    <%= image_tag "fi-guide-dog.svg"%>
+     <%= label_tag "Info" %>
+ <% end %>
+  <%= link_to profile_path, class:"item" do %>
+       <%= image_tag "fi-torso.svg"%>
        <%= label_tag "Profile" %>
   <% end %>
   <% if !current_user %>
     <a class="item" href="#" data-reveal-id="myModal">
       <img src="../assets/img/images/fi-like.svg" >
-      <label>Sign In</label>
+      <%= label_tag "Sign In" %>
       <%= render 'layouts/signin_modal' %>
     </a>
     <% else %>
       <%= link_to signout_path, class:"item" do %>
-       <%= image_tag "assets/images/fi-eject.svg"%>
+       <%= image_tag "fi-eject.svg"%>
        <%= label_tag "Sign Out"%>
       <% end %>
     <% end %>
