@@ -6,5 +6,5 @@ window.PillPal = {
 
 $(document).ready(function(){
     window.router = new PillPal.Routers.Medications();
-    Backbone.History.start;
+    Backbone.history.start({pushState: true})
 });
