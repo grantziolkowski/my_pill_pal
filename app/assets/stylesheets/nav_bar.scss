@@ -1,0 +1,11 @@
+#home_img {
+  background-image: url("rockstar_grandma.jpg");
+  z-index: -1;
+
+  }
+
+#home_img:hover {
+  background-color: #008CBA;
+  z-index: 100;
+}
+
