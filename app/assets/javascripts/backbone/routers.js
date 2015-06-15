@@ -1,12 +1,16 @@
 PillPal.Routers.Medications = Backbone.Router.extend({
+  initialize: function() {
+    this.sidebar = $('#sidebar')
+    this.medications = new PillPal.Models.Medications();
+  },
   routes: {
     "profile" : "listMedications"
   },
   listMedications: function() {
-    var medications = new PillPal.Models.Medications();
-    medications.fetch();
+    console.log("listing");
+    var medications = this.medications;
     var collectionView = new PillPal.Views.Medications({
       collection: medications});
-    $("#sidebar").html(collectionView.render().el)
+      this.sidebar.html(collectionView.render().el)
   }
 })
