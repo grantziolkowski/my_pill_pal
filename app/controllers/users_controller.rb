@@ -16,10 +16,11 @@ class UsersController < ApplicationController
       ums.map do |user_med|
         @medications << user_med.medication
       end
-      respond_to do |format|
-          format.html { render :show }
-          format.json { render json: @user, methods: :medications}
-      end
+      render json: @user, methods: :medications
+      # respond_to do |format|
+      #     format.html { render :show }
+      #     format.json { }
+      # end
     else
       redirect_to root_path
     end
