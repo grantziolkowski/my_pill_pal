@@ -9,11 +9,6 @@ class ApplicationController < ActionController::Base
     User.find_by(id: session[:user_id])
   end
 
-  def index
-    p "MEEE"
-    p current_user.id
-  end
-
   def show
   end
 
