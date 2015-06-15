@@ -15,5 +15,6 @@
 //= require lib/underscore
 //= require lib/backbone
 //= require_tree ./backbone
+//= require_tree ./backbone/templates/medications
 
 $(function(){ $(document).foundation(); });

@@ -15,7 +15,10 @@ class UsersController < ApplicationController
       ums.map do |user_med|
         @medications << user_med.medication
       end
-      render json: current_user, methods: :medications
+      respond_to do |format|
+          format.html { render :index }
+          format.json { render json: current_user, methods: :medications}
+      end
     else
       redirect_to root_path
     end
