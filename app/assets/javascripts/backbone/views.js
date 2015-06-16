@@ -1,19 +1,24 @@
 PillPal.Views.Medications = Backbone.View.extend({
   template: JST["backbone/templates/medications/index"],
   tagName: "ul",
-  initialize: function() {
-    this.collection.on("reset", this.addAll());
+  events: {
+    'click #my_meds': 'addAll'
   },
   addAll: function() {
+    this.$el = $('#sidebar')
+    this.$el.find("button").hide()
     this.collection.map(function(medication) {
       this.addOne(medication)}, this)
+      return this;
   },
   addOne: function(medication) {
     var itemView = new PillPal.Views.Medication({model: medication});
     this.$el.append(itemView.render().el)
     },
   render: function () {
+    this.$el.html(this.template())
     return this;
+
   }
 })
 
