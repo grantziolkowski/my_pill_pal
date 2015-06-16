@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_signin, only: [:new, :create]
   def new
   end
 
   def create
+    p User.first
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
