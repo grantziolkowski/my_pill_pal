@@ -6,7 +6,8 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   addAll: function() {
     this.$el = $('#sidebar')
-    this.$el.find("button").toggle()
+    $("#my_meds_button").toggle()
+    $("#schedule_button").toggle({duration: 1000, queue: false})
     this.collection.map(function(medication) {
       this.addOne(medication)}, this)
       return this;
