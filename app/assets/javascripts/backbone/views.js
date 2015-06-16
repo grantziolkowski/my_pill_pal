@@ -2,11 +2,11 @@ PillPal.Views.Medications = Backbone.View.extend({
   template: JST["backbone/templates/medications/index"],
   tagName: "ul",
   events: {
-    'click #my_meds': 'addAll'
+    'click #my_meds_button': 'addAll'
   },
   addAll: function() {
     this.$el = $('#sidebar')
-    this.$el.find("button").hide()
+    this.$el.find("button").toggle()
     this.collection.map(function(medication) {
       this.addOne(medication)}, this)
       return this;
