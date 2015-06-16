@@ -1,10 +1,13 @@
 #home_img {
   background-image: url("rockstar_grandma.jpg");
-  z-index: -1;
-
   }
 
+.invisible {
+  opacity: 0;
+}
+
 #home_img:hover {
+  background-image: url("fi-home.svg");
   background-color: #008CBA;
   z-index: 100;
 }

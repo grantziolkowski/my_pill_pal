@@ -1,13 +1,13 @@
 <div class="icon-bar five-up">
-  <%= link_to root_path, class:"item", id: "home_img" do %>
-      <%= image_tag "" %>
+  <%= link_to root_path, class: "item", id: "home_img" do %>
+      <%= image_tag "", class: "invisible" %>
       <%= label_tag "Home" %>
   <% end %>
-  <%= link_to profile_path, class:"item" do %>
+  <%= link_to root_path, class:"item" do %>
     <%= image_tag "fi-comments.svg"%>
     <%= label_tag "Forum" %>
   <% end %>
-  <%= link_to profile_path, class:"item" do %>
+  <%= link_to root_path, class:"item" do %>
     <%= image_tag "fi-guide-dog.svg"%>
     <%= label_tag "Info" %>
  <% end %>
