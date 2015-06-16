@@ -17,7 +17,7 @@
   <% end %>
   <% if !current_user %>
     <a class="item" href="#" data-reveal-id="myModal">
-      <img src="../assets/img/images/fi-like.svg" >
+      <%= image_tag "fi-compass.svg" %>
       <%= label_tag "Sign In" %>
       <%= render 'layouts/signin_modal' %>
     </a>

@@ -4,10 +4,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    p User.first
-    user = User.find_by(username: params[:username])
-    if user && user.authenticate(params[:password])
+    p "CREEREATTTING"
+    user = User.find_by(username: params[:user][:username])
+    if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
+      p "Current"
+      p current_user
       redirect_to root_path
     else
       flash[:notice] = "Bad Username or Password"
