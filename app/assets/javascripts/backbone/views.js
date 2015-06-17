@@ -24,7 +24,7 @@ PillPal.Views.Medications = Backbone.View.extend({
     $(".med_buttons").draggable();
     $("#pill_bins").children().droppable({
       drop: function(event, ui){
-        console.log(event.target)
+        console.log(event.target.dataset)
         alert("dropped")
       }
     });
