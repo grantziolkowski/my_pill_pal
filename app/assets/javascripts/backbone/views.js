@@ -1,7 +1,7 @@
 PillPal.Views.Medications = Backbone.View.extend({
   template: JST["backbone/templates/medications/index"],
   initialize: function() {
-
+    this.collection.on("reset", this.addAll())
   },
   events: {
     'click #my_meds_button': 'addAll',
@@ -41,18 +41,6 @@ PillPal.Views.Medications = Backbone.View.extend({
 PillPal.Views.Medication = Backbone.View.extend({
   template: JST["backbone/templates/medications/show"],
   tagName: "li",
-  // events: {
-  //   "click a.destroy" : "destroy"
-  // },
-  // initialize: function() {
-  //   this.model.on("destroy", this.removeThis())
-  // },
-  // destroy: function() {
-  //   this.model.destroy();
-  // },
-  // removeThis: function(medication) {
-  //   this.model.remove();
-  //   },
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
     return this;
