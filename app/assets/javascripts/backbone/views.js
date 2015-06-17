@@ -22,9 +22,12 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   prepareDraggables: function() {
     $(".med_buttons").draggable();
-  },
-  drag: function() {
-    event.preventDefault();
+    $("#pill_bins").children().droppable({
+      drop: function(event, ui){
+        console.log(event.target)
+        alert("dropped")
+      }
+    });
   },
   render: function () {
     this.$el.html(this.template())
