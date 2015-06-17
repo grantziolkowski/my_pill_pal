@@ -13,19 +13,21 @@ PillPal.Views.Medications = Backbone.View.extend({
     $("#schedule_button").toggle({duration: 1000, queue: false})
     this.collection.map(function(medication) {
       this.addOne(medication)}, this)
-    this.prepareDraggables();
+    this.handleDraggables();
       return this;
   },
   addOne: function(medication) {
     var itemView = new PillPal.Views.Medication({model: medication});
     this.$pillList.append(itemView.render().el)
   },
-  prepareDraggables: function() {
+  handleDraggables: function() {
+    var that = this
     $(".med_buttons").draggable();
     $("#pill_bins").children().droppable({
       drop: function(event, ui){
-        console.log(event.target.dataset)
-        alert("dropped")
+        var id = ui.draggable[0].dataset.id;
+        var medModel = that.collection.get(id);
+        medModel.set({day: event.target.dataset.day});
       }
     });
   },
