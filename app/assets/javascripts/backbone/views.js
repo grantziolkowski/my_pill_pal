@@ -5,7 +5,7 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   events: {
     'click #my_meds_button': 'addAll',
-    'click .med_buttons': 'drag'
+    'click .med_buttons': 'checkCollection'
   },
   addAll: function() {
     this.$pillList = $("#pill_list")
@@ -14,7 +14,7 @@ PillPal.Views.Medications = Backbone.View.extend({
     this.collection.map(function(medication) {
       this.addOne(medication)}, this)
     this.handleDraggables();
-      return this;
+    return this;
   },
   addOne: function(medication) {
     var itemView = new PillPal.Views.Medication({model: medication});
@@ -28,8 +28,12 @@ PillPal.Views.Medications = Backbone.View.extend({
         var id = ui.draggable[0].dataset.id;
         var medModel = that.collection.get(id);
         medModel.set({day: event.target.dataset.day});
+        medModel.sync("update", medModel, {data: {user_id: 1}})
       }
     });
+  },
+  checkCollection: function() {
+    event.preventDefault();
   },
   render: function () {
     this.$el.html(this.template())

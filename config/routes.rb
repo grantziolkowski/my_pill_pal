@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   get 'signout' => 'sessions#destroy'
 
   resources :users do
-    resources :medications, shallow: true
-    #only :index, :new, :create are nested
+    resources :medications
+    #shallow: true
+      #only :index, :new, :create are nested
   end
 
   post 'signup'  => 'users#create'
