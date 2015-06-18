@@ -6,5 +6,5 @@ PillPal.Models.Medications = Backbone.Collection.extend({
     this.userId = options.userId
     this.url = '/users/' + this.userId + '/medications'
   },
-  model: PillPal.Models.Medication,
+  model: PillPal.Models.Medication
 })

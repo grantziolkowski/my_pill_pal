@@ -11,9 +11,16 @@
     <%= image_tag "fi-guide-dog.svg"%>
     <%= label_tag "Info" %>
  <% end %>
-  <%= link_to user_medications_path(current_user), class:"item" do %>
+  <% if !current_user %>
+    <%= link_to root_path, class:"item" do %>
        <%= image_tag "fi-torso.svg"%>
        <%= label_tag "Profile" %>
+    <% end %>
+  <% else %>
+    <%= link_to user_medications_path(current_user), class:"item" do %>
+         <%= image_tag "fi-torso.svg"%>
+         <%= label_tag "Profile" %>
+    <% end %>
   <% end %>
   <% if !current_user %>
     <a class="item" href="#" data-reveal-id="myModal">

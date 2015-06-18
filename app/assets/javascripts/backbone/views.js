@@ -5,7 +5,7 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   events: {
     'click #my_meds_button': 'addAll',
-    'click .med_buttons': 'checkCollection'
+    'click .med_buttons': 'medInfoUrl'
   },
   addAll: function() {
     this.$pillList = $("#pill_list")
@@ -27,15 +27,18 @@ PillPal.Views.Medications = Backbone.View.extend({
       drop: function(event, ui){
         var id = ui.draggable[0].dataset.id;
         var medModel = that.collection.get(id);
-        medModel.set({day: event.target.dataset.day});
-        var user_id = medModel.attributes.user_id
-        console.log(medModel.attributes)
-        medModel.save({day: event.target.dataset.day}, {wait: true})
+        // medModel.set({day: event.target.dataset.day});
+        // var user_id = medModel.attributes.user_id
+        // console.log(medModel.attributes)
+        medModel.save({day: event.target.dataset.day}, {error: function(response){
+          console.log(response)
+        }})
       }
     });
   },
-  checkCollection: function() {
+  medInfoUrl: function() {
     event.preventDefault();
+    router.navigate($(event.target.href),{trigger: true});
   },
   render: function () {
     this.$el.html(this.template())
