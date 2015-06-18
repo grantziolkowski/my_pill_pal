@@ -29,7 +29,7 @@ PillPal.Views.Medications = Backbone.View.extend({
         var medModel = that.collection.get(id);
         medModel.set({day: event.target.dataset.day});
         var user_id = medModel.attributes.user_id
-        console.log(user_id)
+        console.log(medModel.attributes)
         medModel.save({day: event.target.dataset.day}, {wait: true})
       }
     });
