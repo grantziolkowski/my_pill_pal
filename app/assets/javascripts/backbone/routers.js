@@ -5,8 +5,8 @@ PillPal.Routers.Medications = Backbone.Router.extend({
   routes: {
     "users/:id/medications" : "userMedications"
   },
-  userMedications: function() {
-    var medications = new PillPal.Models.Medications();
+  userMedications: function(id) {
+    var medications = new PillPal.Models.Medications({userId: id});
     var that = this;
     medications.fetch().then(function() {
       var medsView = new PillPal.Views.Medications({

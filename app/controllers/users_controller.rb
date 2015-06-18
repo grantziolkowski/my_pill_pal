@@ -9,16 +9,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user
-      @user = current_user
-      ums = UserMedication.includes(:medication).where(user: @user)
-      respond_to do |format|
-          format.html { render :show }
-          format.json { render json: ums, methods: :medication}
-      end
-    else
-      redirect_to root_path
-    end
     # api_call = PillFillApiCall.new
     # @response = api_call.request
   end
