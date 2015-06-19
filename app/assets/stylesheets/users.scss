@@ -2,31 +2,4 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#calendar {
-    width: 80%;
-    margin: auto;
-}
 
-#calendar_days dd {
-  border: 1px solid black;
-  border-radius: 3px;
-  text-align: center;
-  width: 12%;
-  margin: 0.5rem;
-}
-
-.columns {
-
-}
-
-#pill_list {
-  list-style: none;
-}
-
-.med_buttons {
-  border-radius: 1rem;
-}
-
-#schedule_button {
-  display: none;
-}
