@@ -25,11 +25,8 @@ PillPal.Views.Medications = Backbone.View.extend({
     $(".med_buttons").draggable();
     $("#pill_bins").children().droppable({
       drop: function(event, ui){
-        var id = ui.draggable[0].dataset.id;
+        var id = ui.draggable[0].dataset.id
         var medModel = that.collection.get(id);
-        // medModel.set({day: event.target.dataset.day});
-        // var user_id = medModel.attributes.user_id
-        // console.log(medModel.attributes)
         medModel.save({day: event.target.dataset.day}, {error: function(response){
           console.log(response)
         }})
@@ -38,7 +35,8 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   medInfoUrl: function() {
     event.preventDefault();
-    router.navigate($(event.target.href),{trigger: true});
+    link = "/" + $(event.target)[0].href
+    router.navigate(link,{trigger: true});
   },
   render: function () {
     this.$el.html(this.template())
@@ -49,7 +47,6 @@ PillPal.Views.Medications = Backbone.View.extend({
 
 PillPal.Views.Medication = Backbone.View.extend({
   template: JST["backbone/templates/medications/show"],
-  tagName: "li",
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
     return this;
