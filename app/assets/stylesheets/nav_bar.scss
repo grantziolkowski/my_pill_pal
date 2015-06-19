@@ -1,14 +1,13 @@
-#home_img {
-  background-image: url("rockstar_grandma.jpg");
+.nav-text {
+    font-family: 'Oleo Script';
+    font-size: 2.3rem;
   }
 
 .invisible {
   opacity: 0;
 }
 
-#home_img:hover {
-  background-image: url("");
-  background-color: #008CBA;
-  z-index: 100;
+.item {
+  color: red;
 }
 

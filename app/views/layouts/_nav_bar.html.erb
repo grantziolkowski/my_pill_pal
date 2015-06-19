@@ -1,23 +1,22 @@
 <div class="icon-bar five-up">
-  <%= link_to root_path, class: "item", id: "home_img" do %>
-      <%= image_tag "", class: "invisible" %>
-      <%= label_tag "Home" %>
+  <%= link_to root_path, class: "item" do %>
+      <%= label_tag :home, "My Pill Pal", class: "nav-text" %>
   <% end %>
-  <%= link_to root_path, class:"item" do %>
+  <%= link_to root_path, class: "item" do %>
     <%= image_tag "fi-comments.svg"%>
     <%= label_tag "Forum" %>
   <% end %>
-  <%= link_to root_path, class:"item" do %>
+  <%= link_to root_path, class: "item" do %>
     <%= image_tag "fi-guide-dog.svg"%>
     <%= label_tag "Info" %>
  <% end %>
   <% if !current_user %>
-    <%= link_to root_path, class:"item" do %>
+    <%= link_to root_path, class: "item" do %>
        <%= image_tag "fi-torso.svg"%>
        <%= label_tag "Profile" %>
     <% end %>
   <% else %>
-    <%= link_to user_medications_path(current_user), class:"item" do %>
+    <%= link_to user_medications_path(current_user), class: "item" do %>
          <%= image_tag "fi-torso.svg"%>
          <%= label_tag "Profile" %>
     <% end %>
@@ -25,13 +24,13 @@
   <% if !current_user %>
     <a class="item" href="#" data-reveal-id="myModal">
       <%= image_tag "fi-compass.svg" %>
-      <%= label_tag "Sign In" %>
+      <%= label_tag :signin, "Sign In" %>
       <%= render 'layouts/signin_modal' %>
     </a>
     <% else %>
-      <%= link_to signout_path, class:"item" do %>
+      <%= link_to signout_path, class: "item" do %>
        <%= image_tag "fi-eject.svg"%>
-       <%= label_tag "Sign Out"%>
+       <%= label_tag :signout, "Sign Out" %>
       <% end %>
     <% end %>
 </div>
