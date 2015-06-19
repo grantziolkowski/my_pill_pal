@@ -1,0 +1,13 @@
+<%= form_for :user, url: signin_path, :html => {"data-abide" => ''} do |f| %>
+    <div class="name-field">
+      <%= f.label(:user) {format('Username')} %>
+      <%= f.text_field :username, :html => {"required" => '', "pattern" => "alpha_numeric"} %>
+      <small class="error">Name is required and must contain at least one letter.</small>
+    </div>
+    <div class="password-field">
+      <%= f.label(:user) {format('Password')} %>
+      <%= f.password_field :password, id: :password, :html => {"required" => '', "pattern" => "alpha_numeric"} %>
+      <small class="error">Your password can only contain letters and numbers.</small>
+    </div>
+    <%= f.submit 'Submit', class: 'button' %>
+  <% end %>

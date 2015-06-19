@@ -1,3 +1,14 @@
 <div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <%= render 'users/new' %>
+  <ul class="tabs" data-tab>
+    <li class="tab-title active"><a href="#panel1">Sign In</a></li>
+    <li class="tab-title"><a href="#panel2">Sign Up</a></li>
+</ul>
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <%= render 'sessions/new' %>
+  </div>
+  <div class="content" id="panel2">
+     <%= render 'users/new' %>
+  </div>
+</div>
 </div>
