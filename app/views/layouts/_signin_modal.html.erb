@@ -1,20 +1,3 @@
 <div id="myModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <%= form_for :user, url: signin_path, :html => {"data-abide" => ''} do |f| %>
-    <div class="name-field">
-      <%= f.label(:user) {format('Username')} %>
-      <%= f.text_field :username, :html => {"required" => '', "pattern" => "alpha_numeric"} %>
-      <small class="error">Name is required and must contain at least one letter.</small>
-    </div>
-    <div class="password-field">
-      <%= f.label(:user) {format('Password')} %>
-      <%= f.password_field :password, id: :password, :html => {"required" => '', "pattern" => "alpha_numeric"} %>
-      <small class="error">Your password can only contain letters and numbers.</small>
-    </div>
-    <div class="password-confirmation-field">
-      <%= f.label(:user) {format('Confirm Password')} %>
-      <%= f.password_field :password, id: :password, :html => {"required" => '', "pattern" => "alpha_numeric", "data-equalto"=> "password"} %>
-      <small class="error">The password did not match</small>
-    </div>
-    <%= f.submit 'Submit', class: 'button' %>
-  <% end %>
+  <%= render 'users/new' %>
 </div>
