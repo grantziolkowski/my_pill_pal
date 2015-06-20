@@ -3,7 +3,7 @@ PillPal.Routers.Medications = Backbone.Router.extend({
     this.calendar = $('#calendar')
   },
   routes: {
-    "users/:id/medications" : "userMedications"
+    "profile" : "userMedications"
   },
   userMedications: function(id) {
     var medications = new PillPal.Models.Medications({userId: id});

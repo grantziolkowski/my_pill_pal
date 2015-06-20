@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   post 'signup'  => 'users#create'
-  get 'profile' => 'users#show'
+  get 'profile' => 'medications#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
