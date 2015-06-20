@@ -22,7 +22,7 @@
     <% end %>
   <% end %>
   <% if !current_user %>
-    <a class="item" href="#" data-reveal-id="myModal">
+    <a class="item" href="#" data-reveal-id="myModal" id="modal">
       <%= image_tag "fi-compass.svg" %>
       <%= label_tag :signin, "Sign In" %>
       <%= render 'layouts/signin_modal' %>
