@@ -1,15 +1,14 @@
 PillPal.Views.Medications = Backbone.View.extend({
   template: JST["backbone/templates/medications/index"],
   initialize: function() {
-    console.log($('#my_meds_button'))
-    // this.collection.on("reset", this.addAll())
+    this.username = this.collection.toJSON()[0].user.username
+    this.collection.on("reset", this.addAll())
   },
   events: {
     'click #my_meds_button': 'addAll',
     'click .med_buttons': 'medInfoUrl'
   },
   addAll: function() {
-    console.log(event.target)
     this.$pillList = $("#pill_list")
     $("#my_meds_button").toggle()
     $("#schedule_button").toggle({duration: 1000, queue: false})
@@ -40,10 +39,8 @@ PillPal.Views.Medications = Backbone.View.extend({
     router.navigate(link,{trigger: true});
   },
   render: function () {
-    console.log(this.$el)
-    this.$el.html(this.template())
+    this.$el.html(this.template({name: this.username}))
     return this;
-
   }
 })
 

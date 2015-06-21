@@ -3,9 +3,10 @@ class MedicationsController < ApplicationController
   def index
       @user = current_user
       @ums = UserMedication.includes(:medication).where(user: @user)
+      p @ums
       respond_to do |format|
           format.html { render :index }
-          format.json { render json: @ums, methods: :medication}
+          format.json { render json: @ums, methods: [:medication, :user]}
       end
   end
 
