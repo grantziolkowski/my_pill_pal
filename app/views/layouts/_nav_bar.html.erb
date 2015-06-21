@@ -16,7 +16,7 @@
        <%= label_tag "Profile" %>
     <% end %>
   <% else %>
-    <%= link_to user_medications_path(current_user), class: "item" do %>
+    <%= link_to profile_path, class: "item" do %>
          <%= image_tag "fi-torso.svg"%>
          <%= label_tag "Profile" %>
     <% end %>
