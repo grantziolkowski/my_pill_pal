@@ -1,5 +1,31 @@
-<div id="sidebar" class="side-nav right">
-    <button id="my_meds_button">My Meds</button>
-    <button id="schedule_button">Drag Meds to Calendar</button>
+<div>
+  <button id="add_meds_button">Add Meds</button>
+  <button id="my_meds_button">My Meds</button>
+  <button id="schedule_button">Drag Meds to Calendar</button>
+</div>
+<div id="calendar">
+  <div class="row" id="calendar_days">
+    <dl class="sub-nav">
+      <dd class="small-2 columns"><a href="#">Sunday</a></dd>
+      <dd class="small-2 columns"><a href="#">Monday</a></dd>
+      <dd class="small-2 columns"><a href="#">Tuesday</a></dd>
+      <dd class="small-2 columns"><a href="#">Wednesday</a></dd>
+      <dd class="small-2 columns"><a href="#">Thursday</a></dd>
+      <dd class="small-2 columns"><a href="#">Friday</a></dd>
+      <dd class="small-2 columns"><a href="#">Saturday</a></dd>
+    </dl>
+  </div>
+  <div class="row" id="pill_bins" data-equalizer>
+    <div class="small-2 columns panel" data-day="Sunday" data-equalizer-watch></div>
+    <div class="small-2 columns panel" data-day="Monday" data-equalizer-watch></div>
+    <div class="small-2 columns panel" data-day="Tuesday" data-equalizer-watch></div>
+    <div class="small-2 columns panel" data-day="Wednesday" data-equalizer-watch></div>
+    <div class="small-2 columns panel" data-day="Thursday" data-equalizer-watch></div>
+    <div class="small-2 columns panel" data-day="Friday" data-equalizer-watch></div>
+    <div class="small-2 columns panel" data-day="Saturday" data-equalizer-watch></div>
+  </div>
+</div>
+
+<div id="sidebar" class="side-nav left">
     <ul id="pill_list"></ul>
 </div>
