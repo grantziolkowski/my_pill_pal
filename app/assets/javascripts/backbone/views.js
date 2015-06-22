@@ -40,7 +40,8 @@ PillPal.Views.Medications = Backbone.View.extend({
     router.navigate(link,{trigger: true});
   },
   newMedForm: function() {
-
+    var newMedFormView = new PillPal.Views.MedicationForm();
+    console.log(newMedFormView.render().el)
   },
   render: function () {
     this.$el.html(this.template({name: this.username}))
@@ -52,6 +53,14 @@ PillPal.Views.Medication = Backbone.View.extend({
   template: JST["backbone/templates/medications/show"],
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
+    return this;
+  }
+})
+
+PillPal.Views.MedicationForm = Backbone.View.extend({
+  template: JST["backbone/templates/medications/new"],
+  render:function () {
+    this.$el.append(this.template)
     return this;
   }
 })
