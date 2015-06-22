@@ -1,1 +1,10 @@
-
+<div id="medFormModal" class="reveal-modal small" data-reveal aria-labelledby="modalNewMeds" aria-hidden="true" role="dialog">
+  <h4>New Medication</h4>
+  <form action="/users/:user_id/medications" method="post">
+    <label>Name of Drug</label>
+    <input type="text" name="medication[name]">
+    <label>Dosage</label>
+    <input type="text" name="medication[dosage]">
+    <input type="submit" class="button">
+  </form>
+</div>

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       #only :index, :new, :create are nested
   end
 
+
   post 'signup'  => 'users#create'
   get 'profile' => 'medications#index'
 
