@@ -6,7 +6,8 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   events: {
     'click #my_meds_button': 'addAll',
-    'click .med_buttons': 'medInfoUrl'
+    'click .med_buttons': 'medInfoUrl',
+    'click #add_meds_button': 'newMedForm'
   },
   addAll: function() {
     this.$pillList = $("#pill_list")
@@ -37,6 +38,9 @@ PillPal.Views.Medications = Backbone.View.extend({
     event.preventDefault();
     link = "/" + $(event.target)[0].href
     router.navigate(link,{trigger: true});
+  },
+  newMedForm: function() {
+
   },
   render: function () {
     this.$el.html(this.template({name: this.username}))
