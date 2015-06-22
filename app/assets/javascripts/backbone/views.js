@@ -43,9 +43,13 @@ PillPal.Views.Medications = Backbone.View.extend({
     router.navigate(link,{trigger: true});
   },
   newMedForm: function() {
+    $('body').on('click', '#submitMedForm', function(event){
+    })
     var newMedFormView = new PillPal.Views.MedicationForm();
     this.$el.append(newMedFormView.render().el)
-    $('#medFormModal').foundation('reveal', 'open');
+    $('#medFormFirst').foundation('reveal', 'open')
+  },
+  secondMedForm: function() {
   },
   render: function () {
     this.$el.html(this.templates.header({name: this.username}))
@@ -67,5 +71,11 @@ PillPal.Views.MedicationForm = Backbone.View.extend({
   render:function () {
     this.$el.html(this.template)
     return this;
+  },
+  events: {
+    'click #medFormAlias':'addInputField'
+  },
+  addInputField: function() {
+
   }
 })

@@ -10,6 +10,7 @@ class MedicationsController < ApplicationController
   end
 
   def create
+    p params
     @medication = Medication.create(medication_params)
     @user_medication = UserMedication.create(user: current_user, medication: @medication)
     redirect_to profile_path
