@@ -20,18 +20,3 @@
 //= require_tree ./backbone/templates/medications
 
 $(function(){ $(document).foundation(); });
-
-$(document).foundation({
-  orbit: {
-    animation: 'slide',
-    timer_speed: 2000,
-    pause_on_hover: true,
-    animation_speed: 1000,
-    bullets: false
-  }
-});
-$(document).ready(function(){
-  $(".orbit-timer").click()
-  $(".orbit-progress").remove()
-  $(".orbit-slide-number").remove()
-})

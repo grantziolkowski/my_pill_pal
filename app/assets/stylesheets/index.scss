@@ -2,6 +2,13 @@
   position: relative;
   margin: auto;
   width: 50%;
+  .orbit-slide-number {
+    display: none;
+  }
+
+  .orbit-progress {
+    display: none;
+  }
 }
 
 .bold {
