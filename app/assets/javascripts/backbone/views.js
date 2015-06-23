@@ -43,13 +43,18 @@ PillPal.Views.Medications = Backbone.View.extend({
     router.navigate(link,{trigger: true});
   },
   newMedForm: function() {
-    $('body').on('click', '#submitMedForm', function(event){
+    var that = this
+    $('body').on('click', '#medFormStep2', function(e){
+      that.secondMedForm(e);
     })
     var newMedFormView = new PillPal.Views.MedicationForm();
     this.$el.append(newMedFormView.render().el)
-    $('#medFormFirst').foundation('reveal', 'open')
+    $('#medFormModal').foundation('reveal', 'open')
   },
-  secondMedForm: function() {
+  secondMedForm: function(e) {
+       e.preventDefault();
+      $('#medFormFirst').toggle();
+      $('#medFormSecond').fadeIn();
   },
   render: function () {
     this.$el.html(this.templates.header({name: this.username}))
