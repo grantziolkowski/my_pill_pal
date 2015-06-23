@@ -1,4 +1,4 @@
-<div class="icon-bar five-up">
+<div class="icon-bar five-up icon-text">
   <%= link_to root_path, class: "item" do %>
       <%= label_tag :home, "My Pill Pal", class: "nav-text" %>
   <% end %>
@@ -7,8 +7,8 @@
     <%= label_tag "Forum" %>
   <% end %>
   <%= link_to root_path, class: "item" do %>
-    <%= image_tag "fi-guide-dog.svg"%>
-    <%= label_tag "Info" %>
+    <%= image_tag "fi-video.svg"%>
+    <%= label_tag "Demo" %>
  <% end %>
   <% if !current_user %>
     <%= link_to root_path, class: "item" do %>
