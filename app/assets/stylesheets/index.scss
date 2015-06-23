@@ -22,10 +22,8 @@
   margin-right: 10%;
   buttons {
     background-color: white;
-    color: #a0d3e8;
   }
 }
-
 
 @keyframes shake {
     0% {
@@ -39,4 +37,24 @@
     100% {
         transform: translate(0px, 10px);
     }
+}
+
+#left {
+  margin-left: 3%;
+
+  #summary {
+    background-color: #4682B4;
+    border: 1px white solid;
+    border-radius: 2px;
+    color: white;
+    padding: 3%;
+    width: 90%;
+    -webkit-box-shadow: 7px 6px 5px 0px rgba(112,111,112,0.46);
+    -moz-box-shadow: 7px 6px 5px 0px rgba(112,111,112,0.46);
+    box-shadow: 7px 6px 5px 0px rgba(112,111,112,0.46);
+  }
+}
+
+#right {
+  margin-right: 3%;
 }
