@@ -67,7 +67,7 @@ PillPal.Views.Medication = Backbone.View.extend({
   template: JST["backbone/templates/medications/show"],
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
-    this.$el.css({"background-color": this.model.toJSON().color})
+    this.$el.find("a.button").css({"background-color": this.model.toJSON().color})
     return this;
   }
 })
