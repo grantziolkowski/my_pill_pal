@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20150618220143) do
 
   create_table "medications", force: :cascade do |t|
     t.string   "name",       null: false
-    t.string   "alias"
     t.integer  "dosage"
     t.string   "url"
     t.datetime "created_at", null: false
@@ -33,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150618220143) do
   create_table "user_medications", force: :cascade do |t|
     t.integer  "user_id",       null: false
     t.integer  "medication_id", null: false
+    t.string   "alias"
     t.string   "notes"
     t.integer  "times_per_day"
     t.datetime "created_at",    null: false

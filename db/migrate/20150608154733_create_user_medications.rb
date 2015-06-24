@@ -3,7 +3,7 @@ class CreateUserMedications < ActiveRecord::Migration
     create_table :user_medications do |t|
       t.references :user, null: false
       t.references :medication, null: false
-
+      t.string :alias
       t.string :notes
       t.integer :times_per_day
 

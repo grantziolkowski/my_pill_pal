@@ -12,7 +12,7 @@ class MedicationsController < ApplicationController
   def create
     p params
     @medication = Medication.create(medication_params)
-    @user_medication = UserMedication.create(user: current_user, medication: @medication)
+    @user_medication = UserMedication.create(user_med_params)
     redirect_to profile_path
   end
   def update
@@ -23,7 +23,11 @@ class MedicationsController < ApplicationController
   end
 
   def medication_params
-    params.require(:medication).permit(:name, :dosage, :alias)
+    params.require(:medication).permit(:name, :dosage)
+  end
+
+  def user_med_params
+    params.require(:user_medication).permit(:alias, :color).merge(user: current_user, medication: @medication)
   end
 
 end

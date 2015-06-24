@@ -1,5 +1,4 @@
-
-  <div id="medFormModal" class="reveal-modal small" data-reveal aria-labelledby="modalNewMeds" aria-hidden="true" role="dialog">
+<div id="medFormModal" class="reveal-modal small" data-reveal aria-labelledby="modalNewMeds" aria-hidden="true" role="dialog">
   <form action="/users/:user_id/medications" method="post" id="newMedForm">
     <div id="medFormFirst">
       <h4>New Medication</h4>
@@ -20,7 +19,7 @@
       </p>
 
       <p>What color are the pills?</p>
-      <input type="color">
+      <input type="color" name="user_medication[color]">
       <input type="submit" class="button" id="submitMedForm">
     </form>
   </div>
