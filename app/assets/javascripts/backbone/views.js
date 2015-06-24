@@ -27,9 +27,13 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   handleDraggables: function() {
     var that = this
-    $(".med_buttons").draggable();
+    $(".med_buttons").draggable({snap: "#pill_bins"});
     $("#pill_bins").children().droppable({
       drop: function(event, ui){
+        var pos = $(this).offset()
+        pos.top += 3;
+        pos.left -= 50;
+        $(ui.draggable).offset(pos);
         var id = ui.draggable[0].dataset.id
         var $pill = $(ui.draggable[0])
         $pill.find("a.button").removeClass("small").addClass("tiny")
