@@ -5,10 +5,15 @@
 #profile-header {
   display: inline;
   margin: 4%;
-}
-
-h1 {
+  button {
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #ff9c3c 0%,#ef7701 100%);
+    margin-right: 5px;
+  }
+  h1 {
+  font-family: "Oleo Script";
   float: right;
+  }
 }
 
 #calendar {
@@ -18,7 +23,7 @@ h1 {
 
 #calendar_days dd {
   border: 1px solid black;
-  border-radius: 3px;
+  border-radius: 4px;
   text-align: center;
   width: 12%;
   margin: 0.5rem;

@@ -1,11 +1,13 @@
-#container {
-  height: 200%;
-  background-color: white;
+body {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
+  #container {
+    height: 200%;
+    background-color: white;
+  }
+  #content-container {
+    padding-top: 2%;
+    color: #444444;
+  }
 }
 
-#content-container {
-  padding-top: 2%;
-  color: #444444;
-}
 
