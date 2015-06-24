@@ -10,8 +10,8 @@ m8 = Medication.create(name: "Glucophage", dosage: '2000mg', url: 'http://www.nl
 m9 = Medication.create(name: "Hydrochlorothiazide", dosage: '50mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a682571.html')
 m10 = Medication.create(name: "Selegiline", dosage: "5mg", url: "http://www.nlm.nih.gov/medlineplus/druginfo/meds/a697046.html")
 
-UserMedication.create(user: user, medication: m1)
-UserMedication.create(user: user, medication: m2)
+UserMedication.create(user: user, medication: m1, day: "Sunday")
+UserMedication.create(user: user, medication: m2, day: "Monday", times_per_day: 2)
 UserMedication.create(user: user, medication: m3, alias: 'Levothyroxine')
 UserMedication.create(user: user, medication: m4, alias: 'Amlodipine')
 UserMedication.create(user: user, medication: m5, alias: 'Omeprazole')
