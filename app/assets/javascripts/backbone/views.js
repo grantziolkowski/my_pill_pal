@@ -59,7 +59,7 @@ PillPal.Views.Medications = Backbone.View.extend({
     $('#medFormSecond').fadeIn();
   },
   render: function () {
-    this.$el.html(this.templates.header({name: this.username}))
+    this.$el.append(this.templates.header({name: this.username}))
     this.$el.append(this.templates.index)
     return this;
   }

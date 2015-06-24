@@ -17,16 +17,22 @@
 }
 
 #calendar {
-    width: 80%;
-    margin: auto;
-}
+  width: 80%;
+  margin: auto;
 
-#calendar_days dd {
-  border: 1px solid black;
-  border-radius: 4px;
-  text-align: center;
-  width: 12%;
-  margin: 0.5rem;
+  #calendar_days {
+    height: 20%;
+    div {
+    text-align: center;
+    border-right: 2px #F4F4F4 solid;
+    background-color: #4682B4;
+    height: 40%;
+
+    a {
+     color: #F4F4F4;
+    }
+    }
+  }
 }
 
 #user_welcome {
