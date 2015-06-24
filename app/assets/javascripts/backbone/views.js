@@ -13,11 +13,12 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   addAll: function() {
     this.$pillList = $("#pill_list")
+    this.$calendar = $("#pill_bins")
     $("#my_meds_button").toggle()
     $("#schedule_button").toggle({duration: 1000, queue: false})
     this.collection.map(function(userMedicationModel) {
       if (userMedicationModel.toJSON().day != null) {
-
+        this.addToCalendar(userMedicationModel)
       } else {
         this.addOne(userMedicationModel)
       }
@@ -28,6 +29,10 @@ PillPal.Views.Medications = Backbone.View.extend({
   addOne: function(medication) {
     var itemView = new PillPal.Views.Medication({model: medication});
     this.$pillList.append(itemView.render().el)
+  },
+  addToCalendar: function(medication) {
+    var pillCalView = new PillPal.Views.MedicationCal({model: medication});
+    this.$calendar.children().append(pillCalView.render().el)
   },
   handleDraggables: function() {
     var that = this
@@ -75,6 +80,10 @@ PillPal.Views.Medication = Backbone.View.extend({
     this.$el.find("a.button").css({"background-color": this.model.toJSON().color})
     return this;
   }
+})
+
+PillPal.Views.MedicationCal = Backbone.View.extend({
+
 })
 
 PillPal.Views.MedicationForm = Backbone.View.extend({
