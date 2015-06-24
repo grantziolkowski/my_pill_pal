@@ -83,7 +83,7 @@ PillPal.Views.Medication = Backbone.View.extend({
 })
 
 PillPal.Views.MedicationCal = Backbone.View.extend({
-
+  template: JST["backbone/templates/medications/calendar_show"]
 })
 
 PillPal.Views.MedicationForm = Backbone.View.extend({
