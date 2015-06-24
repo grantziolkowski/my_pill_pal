@@ -9,7 +9,6 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   events: {
     'click #my_meds_button': 'addAll',
-    'click .med_buttons': 'medInfoUrl',
     'click #add_meds_button': 'newMedForm'
   },
   addAll: function() {
@@ -42,11 +41,6 @@ PillPal.Views.Medications = Backbone.View.extend({
         }})
       }
     });
-  },
-  medInfoUrl: function() {
-    event.preventDefault();
-    link = "/" + $(event.target)[0].href
-    router.navigate(link,{trigger: true});
   },
   newMedForm: function() {
     var that = this
