@@ -10,12 +10,12 @@ class MedicationsController < ApplicationController
   end
 
   def create
-    p params
     @medication = Medication.create(medication_params)
     @user_medication = UserMedication.create(user_med_params)
     redirect_to profile_path
   end
   def update
+    p params
     respond_to do |format|
       format.html { render :index }
       format.json { render json: @ums, methods: :medication}

@@ -31,6 +31,8 @@ PillPal.Views.Medications = Backbone.View.extend({
     $("#pill_bins").children().droppable({
       drop: function(event, ui){
         var id = ui.draggable[0].dataset.id
+        var $pill = $(ui.draggable[0])
+        $pill.find("a.button").removeClass("small").addClass("tiny")
         var medModel = that.collection.get(id);
         medModel.save({day: event.target.dataset.day}, {error: function(response){
         }})
@@ -52,9 +54,9 @@ PillPal.Views.Medications = Backbone.View.extend({
     $('#medFormModal').foundation('reveal', 'open')
   },
   secondMedForm: function(e) {
-       e.preventDefault();
-      $('#medFormFirst').toggle();
-      $('#medFormSecond').fadeIn();
+    e.preventDefault();
+    $('#medFormFirst').toggle();
+    $('#medFormSecond').fadeIn();
   },
   render: function () {
     this.$el.html(this.templates.header({name: this.username}))
