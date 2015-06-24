@@ -82,8 +82,5 @@ PillPal.Views.MedicationForm = Backbone.View.extend({
   },
   events: {
     'click #medFormAlias':'addInputField'
-  },
-  addInputField: function() {
-
   }
 })
