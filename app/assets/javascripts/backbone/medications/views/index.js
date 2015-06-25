@@ -43,18 +43,19 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   handleDraggables: function() {
     var that = this
-    $("#pill_list").children().draggable()
+
+    $("#pill_list li").draggable()
     $("#pill_bins").children().droppable({
-      drop: function(event, ui){
+      drop: function(e, ui){
         var pos = $(this).offset()
         pos.top += 3;
         pos.left -= 50;
         $(ui.draggable).offset(pos);
-        var id = ui.draggable[0].dataset.id
+        var id = ui.draggable[0].dataset
         var $pill = $(ui.draggable[0])
         $pill.find("a.button").removeClass("small").addClass("tiny")
         var medModel = that.collection.get(id);
-        medModel.save({day: event.target.dataset.day}, {error: function(response){
+        medModel.save({day: e.target.childNodes[0].dataset.day}, {error: function(response){
         }})
       }
     });

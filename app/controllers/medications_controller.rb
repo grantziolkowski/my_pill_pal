@@ -15,7 +15,8 @@ class MedicationsController < ApplicationController
     redirect_to profile_path
   end
   def update
-    p params
+    UserMedication.update_attributes(params)
+    @ums = UserMedication.includes(:medication).where(user: @user)
     respond_to do |format|
       format.html { render :index }
       format.json { render json: @ums, methods: :medication}
@@ -26,8 +27,8 @@ class MedicationsController < ApplicationController
     params.require(:medication).permit(:name, :dosage)
   end
 
-  def user_med_params
-    params.require(:user_medication).permit(:alias, :color).merge(user: current_user, medication: @medication)
-  end
+  # def user_med_params
+  #   params.require(:user_medication).permit(:alias, :color, :day).merge(user: current_user, medication: @medication)
+  # end
 
 end
