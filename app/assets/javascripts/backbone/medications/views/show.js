@@ -8,6 +8,7 @@ PillPal.Views.Medication = Backbone.View.extend({
   renderCal: function() {
     this.$el = $("#pill_bins").find("[data-day='" + this.model.toJSON().day + "']")
     this.$el.append(this.template(this.model.toJSON()))
+    this.$el.find("a.button").removeClass("small").addClass("tiny")
     return this;
   }
 

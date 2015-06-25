@@ -43,7 +43,7 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   handleDraggables: function() {
     var that = this
-    $(".med_buttons").draggable();
+    $("#pill_list").children().draggable()
     $("#pill_bins").children().droppable({
       drop: function(event, ui){
         var pos = $(this).offset()
