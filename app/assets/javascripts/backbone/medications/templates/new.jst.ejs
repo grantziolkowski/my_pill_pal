@@ -1,7 +1,7 @@
 <div id="medFormModal" class="reveal-modal small" data-reveal aria-labelledby="modalNewMeds" aria-hidden="true" role="dialog">
   <form action="/users/:user_id/medications" method="post" id="newMedForm">
-    <%= JST["backbone/templates/medications/_new_form_first"]({}) %>
-    <%= JST["backbone/templates/medications/_new_form_second"]({}) %>
+    <%= JST["backbone/medications/templates/_new_form_first"]({}) %>
+    <%= JST["backbone/medications/templates/_new_form_second"]({}) %>
   </form>
 </div>
 

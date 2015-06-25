@@ -14,8 +14,6 @@ PillPal.Views.Medications = Backbone.View.extend({
   addAll: function() {
     this.$pillList = $("#pill_list")
     this.$calendar = $("#pill_bins")
-    $("#my_meds_button").toggle()
-    $("#schedule_button").toggle({duration: 1000, queue: false})
     this.collection.map(function(model) {
       if (model.toJSON().day != null) {
         this.addOneCalendar(model)
@@ -25,6 +23,13 @@ PillPal.Views.Medications = Backbone.View.extend({
       }, this)
     this.handleDraggables();
     return this;
+  },
+  addList: function() {
+    $("#my_meds_button").toggle()
+    var hiddenEls = [this.$pillList, $("#schedule_button")]
+    hiddenEls.forEach(function(el){
+      el.toggle({duration: 500, queue: false})
+    })
   },
   addOne: function(medication) {
     var itemView = new PillPal.Views.Medication({model: medication});
