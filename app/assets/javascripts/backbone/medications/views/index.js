@@ -1,7 +1,7 @@
 PillPal.Views.Medications = Backbone.View.extend({
   templates:  {
-    header: JST["backbone/templates/medications/_index_header"],
-    index: JST["backbone/templates/medications/index"]
+    header: JST["backbone/medications/templates/_index_header"],
+    index: JST["backbone/medications/templates/index"]
   },
   initialize: function() {
     this.username = this.collection.toJSON()[0].user.username
@@ -34,7 +34,6 @@ PillPal.Views.Medications = Backbone.View.extend({
   addOneCalendar: function(medication) {
     var itemView = new PillPal.Views.Medication({model: medication});
       $('body').append(itemView.renderCal().el)
-      console.log("yo")
       return this;
   },
   handleDraggables: function() {
@@ -75,41 +74,4 @@ PillPal.Views.Medications = Backbone.View.extend({
 
     return this;
   }
-})
-
-PillPal.Views.Medication = Backbone.View.extend({
-  template: JST["backbone/templates/medications/show"],
-  render: function () {
-    this.$el.append(this.template(this.model.toJSON()));
-    this.$el.find("a.button").css({"background-color": this.model.toJSON().color})
-    return this;
-  },
-  renderCal: function() {
-    this.$el = $("#pill_bins").find("[data-day='" + this.model.toJSON().day + "']")
-    this.$el.append(this.template(this.model.toJSON()))
-    return this;
-  }
-
-})
-
-
-PillPal.Views.MedicationForm = Backbone.View.extend({
-  template: JST["backbone/templates/medications/new"],
-  render:function () {
-    this.$el.append(this.template)
-    return this;
-  },
-  secondMedForm: function(e) {
-    e.preventDefault();
-    $('#medFormFirst').toggle();
-    $('#medFormSecond').fadeIn();
-  },
-  addAliasField: function(e) {
-    $('#medFormAliasPrompt').hide()
-    $("#medFormAliasField").fadeIn()
-  },
-  addDayField: function(e) {
-    $('#medFormDayPrompt').hide()
-    $("#medFormSubmit").fadeIn()
-  },
 })
