@@ -58,7 +58,10 @@ PillPal.Views.Medications = Backbone.View.extend({
       newMedFormView.secondMedForm(e);
     })
     $('body').on('click', '#medFormAddAlias', function(e){
-      newMedFormView.addInputField(e);
+      newMedFormView.addAliasField(e);
+    })
+    $('body').on('click', '#medFormAddDay', function(e){
+      newMedFormView.addDayField(e);
     })
     this.$el.append(newMedFormView.render().el)
     $('#medFormModal').foundation('reveal', 'open')
@@ -97,8 +100,12 @@ PillPal.Views.MedicationForm = Backbone.View.extend({
     $('#medFormFirst').toggle();
     $('#medFormSecond').fadeIn();
   },
-  addInputField: function(e) {
+  addAliasField: function(e) {
     $('#medFormAliasPrompt').hide()
     $("#medFormAliasField").fadeIn()
-  }
+  },
+  addDayField: function(e) {
+    $('#medFormDayPrompt').hide()
+    $("#medFormSubmit").fadeIn()
+  },
 })

@@ -1,5 +1,5 @@
 <div id="medFormSecond">
-  <h2 id="medFormModal2">Colorful Details</h2>
+  <h2>Colorful Details</h2>
   <p>
     Refer to this drug by its generic or any other name?
   </p>
@@ -9,10 +9,19 @@
     <input type="radio" name="user_medication_alias_prompt" value="No">No
   </p>
   <p id="medFormAliasField">
-    <input type="text" name="user_medication[alias]">
+    <input type="text" name="user_medication[alias]" placeholder="Pill Name to Remember">
   </p>
 
   <p>What color are the pills?</p>
   <input type="color" name="user_medication[color]">
-  <input type="submit" class="button" id="submitMedForm">
+  <div id="medFormDayPrompt">
+    <input type="" value="Add To Calendar" class="button" id="medFormAddDay">
+    <input type="submit" value="Add Later" class="button">
+  </div>
+  <div id="medFormSubmit">
+    <p id="medFormDayField">
+      <input type="text" name="user_medication[day]" placeholder="Day(s) of Week">
+    </p>
+    <input type="submit" class="button">
+  </div>
 </div>

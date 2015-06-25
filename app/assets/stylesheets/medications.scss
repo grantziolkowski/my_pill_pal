@@ -50,7 +50,11 @@
 
 #medFormSecond {
   display: none;
+
   #medFormAliasField {
+    display: none;
+  }
+  #medFormSubmit {
     display: none;
   }
 }
