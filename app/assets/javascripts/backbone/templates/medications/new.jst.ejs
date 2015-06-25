@@ -13,9 +13,14 @@
       <p>
         Refer to this drug by its generic or any other name?
       </p>
-      <input id="medFormAlias" type="radio" name= "user_medication[alias]" value="Yes">Yes
-      <br>
-      <input type="radio" name="user_medication[alias]" value="No">No
+      <p id="medFormAliasPrompt">
+        <input id="medFormAddAlias" type="radio" name= "user_medication_alias_prompt" value="Yes">Yes
+        <br>
+        <input type="radio" name="user_medication_alias_prompt" value="No">No
+
+      </p>
+      <p id="medFormAliasField">
+        <input type="text" name="user_medication[alias]">
       </p>
 
       <p>What color are the pills?</p>

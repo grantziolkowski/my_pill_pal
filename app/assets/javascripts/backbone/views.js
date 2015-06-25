@@ -53,18 +53,15 @@ PillPal.Views.Medications = Backbone.View.extend({
     });
   },
   newMedForm: function() {
-    var that = this
-    $('body').on('click', '#medFormStep2', function(e){
-      that.secondMedForm(e);
-    })
     var newMedFormView = new PillPal.Views.MedicationForm();
+    $('body').on('click', '#medFormStep2', function(e){
+      newMedFormView.secondMedForm(e);
+    })
+    $('body').on('click', '#medFormAddAlias', function(e){
+      newMedFormView.addInputField(e);
+    })
     this.$el.append(newMedFormView.render().el)
     $('#medFormModal').foundation('reveal', 'open')
-  },
-  secondMedForm: function(e) {
-    e.preventDefault();
-    $('#medFormFirst').toggle();
-    $('#medFormSecond').fadeIn();
   },
   render: function () {
     this.$el.append(this.templates.header({name: this.username}))
@@ -92,10 +89,16 @@ PillPal.Views.Medication = Backbone.View.extend({
 PillPal.Views.MedicationForm = Backbone.View.extend({
   template: JST["backbone/templates/medications/new"],
   render:function () {
-    this.$el.html(this.template)
+    this.$el.append(this.template)
     return this;
   },
-  events: {
-    'click #medFormAlias':'addInputField'
+  secondMedForm: function(e) {
+    e.preventDefault();
+    $('#medFormFirst').toggle();
+    $('#medFormSecond').fadeIn();
+  },
+  addInputField: function(e) {
+    $('#medFormAliasPrompt').hide()
+    $("#medFormAliasField").fadeIn()
   }
 })
