@@ -12,6 +12,7 @@ PillPal.Routers.Medications = Backbone.Router.extend({
       var medsView = new PillPal.Views.Medications({
         collection: medications});
       that.$container.append(medsView.render().el)
+      that.$container.append(medsView.addAll())
     })
   }
 })

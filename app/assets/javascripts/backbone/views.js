@@ -5,10 +5,10 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   initialize: function() {
     this.username = this.collection.toJSON()[0].user.username
-    // this.collection.on("reset", this.render().el)
+    this.collection.on("reset", this.addAll())
   },
   events: {
-    'click #my_meds_button': 'addAll',
+    'click #my_meds_button': 'addList',
     'click #add_meds_button': 'newMedForm'
   },
   addAll: function() {
@@ -16,11 +16,11 @@ PillPal.Views.Medications = Backbone.View.extend({
     this.$calendar = $("#pill_bins")
     $("#my_meds_button").toggle()
     $("#schedule_button").toggle({duration: 1000, queue: false})
-    this.collection.map(function(userMedicationModel) {
-      if (userMedicationModel.toJSON().day != null) {
-        this.addToCalendar(userMedicationModel)
+    this.collection.map(function(model) {
+      if (model.toJSON().day != null) {
+        this.addOneCalendar(model)
       } else {
-        this.addOne(userMedicationModel)
+        this.addOne(model)
       }
       }, this)
     this.handleDraggables();
@@ -29,10 +29,13 @@ PillPal.Views.Medications = Backbone.View.extend({
   addOne: function(medication) {
     var itemView = new PillPal.Views.Medication({model: medication});
     this.$pillList.append(itemView.render().el)
+    return this;
   },
-  addToCalendar: function(medication) {
+  addOneCalendar: function(medication) {
     var itemView = new PillPal.Views.Medication({model: medication});
-      this.$calendar.append(itemView.renderCal().el)
+      $('body').append(itemView.renderCal().el)
+      console.log("yo")
+      return this;
   },
   handleDraggables: function() {
     var that = this
@@ -69,6 +72,7 @@ PillPal.Views.Medications = Backbone.View.extend({
   render: function () {
     this.$el.append(this.templates.header({name: this.username}))
     this.$el.append(this.templates.index)
+
     return this;
   }
 })
@@ -76,13 +80,13 @@ PillPal.Views.Medications = Backbone.View.extend({
 PillPal.Views.Medication = Backbone.View.extend({
   template: JST["backbone/templates/medications/show"],
   render: function () {
-    this.$el.html(this.template(this.model.toJSON()));
+    this.$el.append(this.template(this.model.toJSON()));
     this.$el.find("a.button").css({"background-color": this.model.toJSON().color})
     return this;
   },
   renderCal: function() {
-    this.$el = $("#pill_bins").find("[data-day='" + this.model.toJSON().day + "']");
-    this.$el.append(this.template(this.model.toJSON()));
+    this.$el = $("#pill_bins").find("[data-day='" + this.model.toJSON().day + "']")
+    this.$el.append(this.template(this.model.toJSON()))
     return this;
   }
 
