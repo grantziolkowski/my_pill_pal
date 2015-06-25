@@ -5,7 +5,7 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   initialize: function() {
     this.username = this.collection.toJSON()[0].user.username
-    this.collection.on("reset", this.addAll())
+    // this.collection.on("reset", this.render().el)
   },
   events: {
     'click #my_meds_button': 'addAll',

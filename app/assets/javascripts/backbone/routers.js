@@ -1,6 +1,6 @@
 PillPal.Routers.Medications = Backbone.Router.extend({
   initialize: function() {
-    $container = $('#container')
+    this.$container = $('#container')
   },
   routes: {
     "profile" : "userMedications"
@@ -11,7 +11,7 @@ PillPal.Routers.Medications = Backbone.Router.extend({
     medications.fetch().then(function() {
       var medsView = new PillPal.Views.Medications({
         collection: medications});
-      $container.append(medsView.render().el)
+      that.$container.append(medsView.render().el)
     })
   }
 })
