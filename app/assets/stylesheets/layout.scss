@@ -1,16 +1,15 @@
 body {
-
   font-family: "Raleway", Helvetica, Arial, sans-serif;
-  #container {
 
-      background: url("prairie.jpg") no-repeat center center fixed;
+  #container {
+    background: url("prairie.jpg") no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
     width: 100%;
     height: 150%;
-    background-color: white;
+
   }
 
   #content-container {
