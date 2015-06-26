@@ -23,14 +23,24 @@
   #calendar_days {
     height: 20%;
     div {
-    text-align: center;
-    border-right: 2px #F4F4F4 solid;
-    background-color: #4682B4;
-    height: 40%;
+      text-align: center;
+      border-right: 2px #F4F4F4 solid;
+      background-color: #4682B4;
+      height: 40%;
 
-    a {
-     color: #F4F4F4;
+      a {
+       color: #F4F4F4;
+      }
     }
+  }
+
+  #pill_bins {
+    .panel {
+      height: 10em;
+
+      ul {
+        list-style: none;
+      }
     }
   }
 }
