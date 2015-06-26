@@ -27,8 +27,8 @@ class MedicationsController < ApplicationController
     params.require(:medication).permit(:name, :dosage)
   end
 
-  # def user_med_params
-  #   params.require(:user_medication).permit(:alias, :color, :day).merge(user: current_user, medication: @medication)
-  # end
+  def user_med_params
+    params.require(:user_medication).permit(:alias, :color, :day).merge(user: current_user, medication: @medication)
+  end
 
 end
