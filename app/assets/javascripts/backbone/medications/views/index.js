@@ -18,6 +18,7 @@ PillPal.Views.Medications = Backbone.View.extend({
       if (model.toJSON().day != null) {
         this.addOneCalendar(model)
       } else {
+        console.log(model.toJSON().id)
         this.addOne(model)
       }
       }, this)

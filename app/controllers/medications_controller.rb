@@ -10,10 +10,15 @@ class MedicationsController < ApplicationController
   end
 
   def create
+    p user_med_params[:day]
     @medication = Medication.create(medication_params)
     @user_medication = UserMedication.create(user_med_params)
+    if @user_medication.day == ""
+       @user_medication.update_attributes(day: nil)
+    end
     redirect_to profile_path
   end
+
   def update
     UserMedication.update_attributes(params)
     @ums = UserMedication.includes(:medication).where(user: @user)
