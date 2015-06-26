@@ -1,6 +1,5 @@
 body {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
-
   #container {
     background: url("prairie.jpg") no-repeat center center fixed;
       -webkit-background-size: cover;
@@ -15,7 +14,11 @@ body {
   #content-container {
     height: 100%;
     padding-top: 2%;
-    color: #444444;
+    .orange_gradient {
+      border-radius: 3px;
+      background: linear-gradient(to bottom, #ff9c3c 0%,#ef7701 100%);
+      margin-right: 5px;
+    }
   }
 }
 

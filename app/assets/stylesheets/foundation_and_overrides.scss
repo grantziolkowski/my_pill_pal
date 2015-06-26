@@ -125,7 +125,7 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these to control various global styles
 // $body-bg: $white;
-// $body-font-color: $jet;
+   $body-font-color: $vapor;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -710,8 +710,8 @@ $include-html-button-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to style the icon-bar and items
-  $icon-bar-bg: $primary-color;
-   $icon-bar-font-color: $vapor;
+   $icon-bar-bg: $primary-color;
+// $icon-bar-font-color: $vapor;
    $icon-bar-font-color-hover: $primary-color;
    $icon-bar-font-size: 1.2rem;
    $icon-bar-hover-color: $gainsboro;
