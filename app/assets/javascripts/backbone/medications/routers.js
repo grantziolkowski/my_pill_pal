@@ -17,6 +17,7 @@ PillPal.Routers.Medications = Backbone.Router.extend({
     })
   },
   forumIndex: function() {
+    var posts = new PillPal.Models.Posts()
   }
 })
 
