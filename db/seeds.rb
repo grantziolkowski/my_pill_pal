@@ -1,3 +1,4 @@
+Medication.create(name: "Sample", dosage: "50mg", url: 'http://health.nih.gov/')
 user = User.create(username: "Grant", password: "123")
 m1 = Medication.create(name: "Hydrocodone", dosage: "5mg", url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a601006.html')
 m2 = Medication.create(name: "Lisinopril", dosage: '20mg', url: 'http://www.nlm.nih.gov/medlineplus/druginfo/meds/a692051.html')
