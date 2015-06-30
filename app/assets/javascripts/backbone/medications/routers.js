@@ -3,7 +3,7 @@ PillPal.Routers.Medications = Backbone.Router.extend({
     this.$container = $('#content-container')
   },
   routes: {
-    "users/:user_id/medications" : "userMedications"
+    "profile" : "userMedications"
   },
   userMedications: function(id) {
     var medications = new PillPal.Models.Medications({userId: id});
