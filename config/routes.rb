@@ -12,9 +12,12 @@ Rails.application.routes.draw do
       #only :index, :new, :create are nested
   end
 
+  resources :posts
+
 
   post 'signup'  => 'users#create'
   get 'profile' => 'medications#index'
+  get 'forum' => 'posts#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
