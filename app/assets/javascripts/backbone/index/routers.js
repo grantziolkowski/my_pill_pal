@@ -1,13 +1,13 @@
-PillPal.Routers.Medications = Backbone.Router.extend({
+PillPal.Routers.Index = Backbone.Router.extend({
   initialize: function() {
     this.$container = $('#content-container')
-    this.$container.empty()
   },
   routes: {
     "profile" : "userMedications",
     "forum"   : "forumIndex"
   },
   userMedications: function(id) {
+    this.$container.empty()
     var medications = new PillPal.Models.Medications({userId: id});
     var that = this;
     medications.fetch().then(function() {
