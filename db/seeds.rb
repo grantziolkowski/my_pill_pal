@@ -22,3 +22,5 @@ UserMedication.create(user: user, medication: m8, alias: 'Metformin')
 UserMedication.create(user: user, medication: m9)
 UserMedication.create(user: user, medication: m10)
 
+
+
