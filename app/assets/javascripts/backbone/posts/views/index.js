@@ -1,8 +1,7 @@
 PillPal.Views.Posts = Backbone.View.extend({
-  tagName: "ul",
   template: JST["backbone/posts/templates/index"],
   addAll: function() {
-    var ul = this.$el
+    var ul = this.$el.find("ul")
     this.collection.forEach(function(model) {
       ul.append(new PillPal.Views.Post({
         model: model
@@ -12,7 +11,6 @@ PillPal.Views.Posts = Backbone.View.extend({
   },
   render: function() {
     this.$el.append(this.template())
-    // this.$el.append(this.addAll())
     return this
   }
 })
