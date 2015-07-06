@@ -31,7 +31,7 @@ PillPal.Routers.Index = Backbone.Router.extend({
       var postsView = new PillPal.Views.Posts({
         collection: posts});
       that.$container.append(postsView.render().el)
-      // that.$container.html(postsView.addAll())
+      that.$container.append(postsView.addAll())
     })
   }
 })

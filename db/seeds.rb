@@ -22,5 +22,8 @@ UserMedication.create(user: user, medication: m8, alias: 'Metformin')
 UserMedication.create(user: user, medication: m9)
 UserMedication.create(user: user, medication: m10)
 
-
+p1 = Post.create(author: user, title: "Don't use Metformin", content: "I had a very strong reaction to Metformin. Muscle pain or weakness; numb or cold feeling in your arms and legs; trouble breathing; feeling dizzy, light-headed, tired, or very weak; stomach pain, nausea with vomiting; or slow or uneven heart rate.")
+PostMedication.create(post: p1, medication: m8)
+p2 = Post.create(author: user, title: "Highly recommend Lisinopril", content:  "This drug helped me treat hypertension, congestive heart failure and to improve survival after a heart attack.")
+PostMedication.create(post: p2, medication: m2)
 
