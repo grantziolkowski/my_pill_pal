@@ -9,6 +9,7 @@ PillPal.Routers.Index = Backbone.Router.extend({
   },
   root: function() {
     var indexView = new PillPal.Views.Index();
+    this.$container.prepend(indexView.render().el)
   },
   userMedications: function(id) {
     this.$container.empty()
