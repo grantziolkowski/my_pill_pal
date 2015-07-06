@@ -8,7 +8,7 @@ PillPal.Routers.Index = Backbone.Router.extend({
     "forum"   : "forumIndex"
   },
   root: function() {
-
+    var indexView = new PillPal.Views.Index();
   },
   userMedications: function(id) {
     this.$container.empty()
