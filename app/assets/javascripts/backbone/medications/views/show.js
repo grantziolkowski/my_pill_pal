@@ -1,7 +1,4 @@
 PillPal.Views.Medication = Backbone.View.extend({
-  initialize: function() {
-
-   },
   template: JST["backbone/medications/templates/show"],
   render: function () {
     this.$el.append(this.template(this.model.toJSON()));
