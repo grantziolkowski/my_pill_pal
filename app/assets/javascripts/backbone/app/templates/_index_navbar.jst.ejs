@@ -1,0 +1,37 @@
+<div class="icon-bar five-up icon-text">
+  <%= link_to root_path, class: "item" do %>
+      <%= label_tag :home, "My Pill Pal", class: "nav-text" %>
+  <% end %>
+  <%= link_to forum_path, class: "item" do %>
+    <%= image_tag "fi-comments.svg"%>
+    <%= label_tag "Forum" %>
+  <% end %>
+  <%= link_to root_path, class: "item" do %>
+    <%= image_tag "fi-video.svg"%>
+    <%= label_tag "Demo" %>
+ <% end %>
+  <% if !current_user %>
+    <%= link_to root_path, class: "item" do %>
+       <%= image_tag "fi-torso.svg"%>
+       <%= label_tag "Profile" %>
+    <% end %>
+  <% else %>
+    <%= link_to profile_path, class: "item" do %>
+         <%= image_tag "fi-torso.svg"%>
+         <%= label_tag "Profile" %>
+    <% end %>
+  <% end %>
+  <% if !current_user %>
+    <a class="item" href="#" data-reveal-id="signInModal" id="modal">
+      <%= image_tag "fi-compass.svg" %>
+      <%= label_tag :signin, "Sign In" %>
+      <%= render 'layouts/signin_modal' %>
+    </a>
+    <% else %>
+      <%= link_to signout_path, class: "item" do %>
+       <%= image_tag "fi-eject.svg"%>
+       <%= label_tag :signout, "Sign Out" %>
+      <% end %>
+    <% end %>
+</div>
+

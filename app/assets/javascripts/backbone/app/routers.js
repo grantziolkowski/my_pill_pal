@@ -3,8 +3,12 @@ PillPal.Routers.Index = Backbone.Router.extend({
     this.$container = $('#content-container')
   },
   routes: {
+    "/"       : "root",
     "profile" : "userMedications",
     "forum"   : "forumIndex"
+  },
+  root: function() {
+
   },
   userMedications: function(id) {
     this.$container.empty()
