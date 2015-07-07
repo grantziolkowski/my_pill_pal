@@ -11,7 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui
+//= require jquery-ui/draggable
+//= require jquery-ui/droppable
 //= require foundation
 //= require lib/underscore
 //= require lib/backbone

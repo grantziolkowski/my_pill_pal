@@ -1,4 +1,7 @@
 PillPal.Views.Index = Backbone.View.extend({
+  initialize: function(options) {
+    this.user = options.user
+  },
   templates: {
     navbar: JST["backbone/app/templates/_index_navbar"],
     index: JST["backbone/app/templates/index"]
@@ -23,7 +26,7 @@ PillPal.Views.Index = Backbone.View.extend({
     window.router.navigate("profile", {trigger: true});
   },
   render: function() {
-    this.$el.append(this.templates.navbar);
+    this.$el.append(this.templates.navbar({user: this.user}))
     $('#content-container').html(this.templates.index);
     return this;
   }

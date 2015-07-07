@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: [:create]
   skip_before_action :require_signin, only: [:create]
 
   def create

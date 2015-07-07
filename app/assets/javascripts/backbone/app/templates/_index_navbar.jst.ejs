@@ -14,9 +14,17 @@
      <img src="assets/fi-torso.svg">
      <label>Profile</label>
   </a>
-  <a href="/signout" class="item" class="signin_out_link">
-     <img src="assets/fi-eject.svg">
-     <label>Sign Out</label>
-  </a>
+  <% if (user === null) { %>
+    <a class="item signin_out_link" href="#" data-reveal-id="signInModal" id="modal">
+      <img src="assets/fi-compass.svg">
+      <label>Sign In</label>
+      <%= JST["backbone/app/templates/_signin_modal"]({}) %>
+    </a>
+  <% } else { %>
+    <a href="/signout" class="item" class="signin_out_link">
+       <img src="assets/fi-eject.svg">
+       <label>Sign Out</label>
+    </a>
+  <% } %>
 </div>
 
