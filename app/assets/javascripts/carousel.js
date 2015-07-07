@@ -1,8 +1,8 @@
  $(document).ready(function() {
-   $('body').on('click', '#home_link', function() {
+   $('#container').on('click', '#home_link', function() {
       setTimeout(function(){
          $(window).trigger('resize');
-      })
+      }, 0)
 
      $(document).foundation({
         orbit: {
