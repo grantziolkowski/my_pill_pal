@@ -1,18 +1,10 @@
 <form action="/signup" method="post" data-abide>
-    <div class="name-field">
-      <label>Username</label>
-      <input type="text_field" name="user[username]" required pattern="alpha_numeric">
-      <small class="error">Name is required and must contain at least one letter.</small>
-    </div>
-    <div class="password-field">
-      <label>Password</label>
-      <input type="password_field" name="user[password]" id="password" required pattern="alpha_numeric">
-      <small class="error">Your password can only contain letters and numbers.</small>
-    </div>
-    <div class="password-confirmation-field">
-      <label>Confirm Password</label>
-      <input type="password_field" name="user[password]" id="password required pattern="alpha_numeric" data-equalto="password">
-      <small class="error">The password did not match</small>
-    </div>
-    <input type="submit" class="button">
+  <%= JST["backbone/app/templates/_signin_form_partial"]({}) %>
+
+  <div class="password-confirmation-field">
+    <label>Confirm Password</label>
+    <input type="password" name="user[password]" required pattern="alpha_numeric">
+    <small class="error">The password did not match</small>
+  </div>
+  <input type="submit" class="button">
  </form>
