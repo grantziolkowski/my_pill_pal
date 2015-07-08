@@ -1,7 +1,10 @@
 PillPal.Views.Posts = Backbone.View.extend({
-  template: JST["backbone/posts/templates/index"],
+  templates: {
+    header: JST["backbone/posts/templates/_index_header"],
+    index: JST["backbone/posts/templates/index"]
+  },
   addAll: function() {
-    var ul = this.$el.find("ul")
+    var ul = this.$el.find("#forum_container")
     this.collection.forEach(function(model) {
       ul.append(new PillPal.Views.Post({
         model: model
@@ -10,7 +13,8 @@ PillPal.Views.Posts = Backbone.View.extend({
     return this;
   },
   render: function() {
-    this.$el.append(this.template())
+    this.$el.append(this.templates.header)
+    this.$el.append(this.templates.index)
     return this
   }
 })
