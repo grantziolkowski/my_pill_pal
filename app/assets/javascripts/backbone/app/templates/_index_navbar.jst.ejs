@@ -15,7 +15,7 @@
      <label>Profile</label>
   </a>
   <% if (user === null) { %>
-    <a class="item signin_out_link" href="#" data-reveal-id="signInModal" id="modal">
+    <a class="item signin_out_link modal" href="#" data-reveal-id="signInModal">
       <img src="assets/fi-compass.svg">
       <label>Sign In</label>
       <%= JST["backbone/app/templates/_signin_modal"]({}) %>
