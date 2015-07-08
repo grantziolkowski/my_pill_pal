@@ -10,8 +10,11 @@ PillPal.Routers.Index = Backbone.Router.extend({
   },
   root: function() {
     this.$container.empty()
-    var indexView = new PillPal.Views.Index({user: this.user});
-    $('#nav-bar').html(indexView.render().el)
+    index = new PillPal.Models.Index()
+    index.fetch().then(function() {
+      var indexView = new PillPal.Views.Index({model: index});
+      $('#nav-bar').html(indexView.render().el)
+    })
   },
   userMedications: function(id) {
     this.$container.empty()
@@ -19,7 +22,8 @@ PillPal.Routers.Index = Backbone.Router.extend({
     var that = this;
     medications.fetch().then(function() {
       var medsView = new PillPal.Views.Medications({
-        collection: medications});
+        collection: medications,
+        userId: id});
       that.$container.append(medsView.render().el)
       that.$container.append(medsView.addAll())
     })

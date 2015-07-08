@@ -1,6 +1,12 @@
 PillPal.Views.Index = Backbone.View.extend({
-  initialize: function(options) {
-    this.user = options.user
+  initialize: function() {
+   var model = this.model.toJSON()
+   var id = function(model) {
+     if (_.isEmpty(model)) {
+      return null
+     }
+   }
+   this.user = id()
   },
   templates: {
     navbar: JST["backbone/app/templates/_index_navbar"],
@@ -25,7 +31,12 @@ PillPal.Views.Index = Backbone.View.extend({
     e.preventDefault();
     window.router.navigate("profile", {trigger: true});
   },
+  handleSignInOut: function(e) {
+    e.preventDefault();
+    console.log("gotcha")
+  }
   render: function() {
+    console.log(this.user)
     this.$el.append(this.templates.navbar({user: this.user}))
     $('#content-container').html(this.templates.index);
     return this;

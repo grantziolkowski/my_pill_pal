@@ -4,6 +4,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
   before_action :require_signin, except: [:index]
+  def index
+    current_user ? @id = current_user.id : @id = nil
+      respond_to do |format|
+        format.html { render :index }
+        format.json { render json: @id}
+      end
+  end
 
   def current_user
     User.find_by(id: session[:user_id])

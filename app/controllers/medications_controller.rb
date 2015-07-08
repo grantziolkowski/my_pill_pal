@@ -16,7 +16,11 @@ class MedicationsController < ApplicationController
     if @user_medication.day == ""
        @user_medication.update_attributes(day: nil)
     end
-    redirect_to profile_path
+    @ums = UserMedication.includes(:medication).where(user: current_user)
+       respond_to do |format|
+        format.html { render :index }
+        format.json { render json: @ums, methods: [:medication, :user]}
+      end
   end
 
   def update

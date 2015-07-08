@@ -5,6 +5,7 @@ PillPal.Views.Medications = Backbone.View.extend({
   },
   initialize: function() {
     this.username = this.collection.toJSON()[0].user.username
+    this.userId = this.collection.toJSON()[0].user.id
     this.collection.on("reset", this.addAll())
   },
   events: {
@@ -12,6 +13,7 @@ PillPal.Views.Medications = Backbone.View.extend({
     'click #add_meds_button': 'newMedForm'
   },
   addAll: function() {
+    console.log("reset")
     this.$pillList = $("#pill_list")
     this.$calendar = $("#pill_bins")
     this.collection.map(function(model) {
@@ -61,7 +63,7 @@ PillPal.Views.Medications = Backbone.View.extend({
     });
   },
   newMedForm: function() {
-    var newMedFormView = new PillPal.Views.MedicationForm();
+    var newMedFormView = new PillPal.Views.MedicationForm({userId: this.userId});
     $('body').on('click', '#medFormStep2', function(e){
       newMedFormView.secondMedForm(e);
     })
