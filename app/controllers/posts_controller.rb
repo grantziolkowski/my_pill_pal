@@ -6,4 +6,6 @@ class PostsController < ApplicationController
         format.json { render json: @posts, methods: [:comments, :tags, :user]}
       end
   end
+
+
 end

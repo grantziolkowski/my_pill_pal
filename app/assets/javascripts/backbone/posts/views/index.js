@@ -3,6 +3,9 @@ PillPal.Views.Posts = Backbone.View.extend({
     header: JST["backbone/posts/templates/_index_header"],
     index: JST["backbone/posts/templates/index"]
   },
+  events: {
+    'click #add_post_button': 'newPostForm'
+  },
   addAll: function() {
     var ul = this.$el.find("#forum_container")
     this.collection.forEach(function(model) {
@@ -11,6 +14,11 @@ PillPal.Views.Posts = Backbone.View.extend({
       }).render().el)
     })
     return this;
+  },
+  newPostForm: function() {
+    newPostFormView = new PillPal.Views.PostForm()
+    this.$el.append(newPostFormView.render().el)
+    $('#postFormModal').foundation('reveal', 'open')
   },
   render: function() {
     this.$el.append(this.templates.header)

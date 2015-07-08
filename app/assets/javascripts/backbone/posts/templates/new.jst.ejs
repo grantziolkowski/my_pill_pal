@@ -1,0 +1,18 @@
+<div id="postFormModal" class="reveal-modal small" data-reveal aria-labelledby="modalNewPosts" aria-hidden="true" role="dialog">
+  <form action="/posts" method="post" id="newPostForm">
+      <h4>My PillPal Forum</h4>
+      <label>Title</label>
+      <input type="text" name="post[title]">
+
+
+      <label>Content</label>
+      <textarea name="post[content]" rows="10"></textarea>
+
+      <label>Tag Medications</label>
+      <input type="text" name="post[medications_string]" placeholder="Ex. Metformin, Norvasc">
+
+      <input type="submit" class="radius blue-gradient button">
+
+    </div>
+  </form>
+</div>
