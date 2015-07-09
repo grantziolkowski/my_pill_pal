@@ -5,10 +5,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   before_action :require_signin, except: [:index]
   def index
-    current_user ? @id = current_user.id : @id = nil
       respond_to do |format|
         format.html { render :index }
-        format.json { render json: @id}
+        format.json { render json: current_user}
       end
   end
 

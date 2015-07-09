@@ -1,12 +1,14 @@
 PillPal.Views.Index = Backbone.View.extend({
   initialize: function() {
    var model = this.model.toJSON()
-   var id = function(model) {
+   function getId(model) {
      if (_.isEmpty(model)) {
       return null
+     } else {
+      return model.id
      }
    }
-   this.user = id()
+   this.user = getId(model)
   },
   templates: {
     navbar: JST["backbone/app/templates/_index_navbar"],
@@ -17,7 +19,7 @@ PillPal.Views.Index = Backbone.View.extend({
     "click #forum_link": "forum",
     "click #demo_link": "demo",
     "click #profile_link": "profile",
-    "click .signin_out_link": "handleSignInOut"
+    "click .modal": "revealModal"
   },
   home: function(e) {
     e.preventDefault();
@@ -31,14 +33,13 @@ PillPal.Views.Index = Backbone.View.extend({
     e.preventDefault();
     window.router.navigate("profile", {trigger: true});
   },
-  handleSignInOut: function(e) {
+  revealModal: function(e) {
     e.preventDefault();
-    console.log("gotcha")
-  }
+    $('#signInModal').foundation('reveal', 'open')
+  },
   render: function() {
-    console.log(this.user)
     this.$el.append(this.templates.navbar({user: this.user}))
-    $('#content-container').html(this.templates.index);
+    $('#content-container').append(this.templates.index);
     return this;
   }
 })
