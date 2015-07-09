@@ -5,7 +5,6 @@ PillPal.Views.MedicationForm = Backbone.View.extend({
   template: JST["backbone/medications/templates/new"],
   render: function() {
     this.$el.append(this.template({userId: this.userId}))
-    console.log(this.userId)
     return this;
   },
   secondMedForm: function(e) {

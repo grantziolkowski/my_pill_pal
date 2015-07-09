@@ -19,4 +19,3 @@
 //= require_tree
 //= require_tree ./backbone
 
-$(function(){ $(document).foundation(); });

@@ -1,10 +1,10 @@
- $(document).ready(function() {
-   $('#container').on('click', '#home_link', function() {
-      setTimeout(function(){
-         $(window).trigger('resize');
-      }, 0)
+$(document).ready(function() {
+  setTimeout(loadFoundation, 50)
+})
+ //Foundation needs to load after content is rendered to DOM
 
-     $(document).foundation({
+function loadFoundation() {
+  $(document).foundation({
         orbit: {
           animation: 'slide',
           timer_speed: 2000,
@@ -14,10 +14,6 @@
           bullets: false
         }
       })
-    })
-   $('#home_link').click()
-  })
- //fix Foundation bug to trigger orbit when page is rendered without reload
-
+}
 
 

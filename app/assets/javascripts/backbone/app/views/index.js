@@ -18,8 +18,7 @@ PillPal.Views.Index = Backbone.View.extend({
     "click #home_link": "home",
     "click #forum_link": "forum",
     "click #demo_link": "demo",
-    "click #profile_link": "profile",
-    "click .modal": "revealModal"
+    "click #profile_link": "profile"
   },
   home: function(e) {
     e.preventDefault();
@@ -32,10 +31,6 @@ PillPal.Views.Index = Backbone.View.extend({
   profile: function(e) {
     e.preventDefault();
     window.router.navigate("profile", {trigger: true});
-  },
-  revealModal: function(e) {
-    e.preventDefault();
-    $('#signInModal').foundation('reveal', 'open')
   },
   render: function() {
     this.$el.append(this.templates.navbar({user: this.user}))

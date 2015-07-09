@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('body').on('click', '.modal', function(){
+  $('body').on('click', '.modal', function(e){
     $('a.item').remove()
     //eliminate bug in Foundation tabs
   })
