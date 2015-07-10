@@ -3,6 +3,9 @@ PillPal.Views.Posts = Backbone.View.extend({
     header: JST["backbone/posts/templates/_index_header"],
     index: JST["backbone/posts/templates/index"]
   },
+  initialize: function() {
+    this.collection.on("reset", this.addAll())
+  },
   events: {
     'click #add_post_button': 'newPostForm'
   },
