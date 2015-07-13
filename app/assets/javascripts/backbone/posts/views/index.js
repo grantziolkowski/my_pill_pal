@@ -22,6 +22,9 @@ PillPal.Views.Posts = Backbone.View.extend({
     newPostFormView = new PillPal.Views.PostForm()
     this.$el.append(newPostFormView.render().el)
     $('#postFormModal').foundation('reveal', 'open')
+    $('body').on('click', '#create_post', function(e){
+      newPostFormView.createPost(e);
+    })
   },
   render: function() {
     this.$el.append(this.templates.header)

@@ -17,10 +17,10 @@ class MedicationsController < ApplicationController
        @user_medication.update_attributes(day: nil)
     end
     @ums = UserMedication.includes(:medication).where(user: current_user)
-       respond_to do |format|
-        format.html { render :index }
-        format.json { render json: @ums, methods: [:medication, :user]}
-      end
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @ums, methods: [:medication, :user]}
+    end
   end
 
   def update
