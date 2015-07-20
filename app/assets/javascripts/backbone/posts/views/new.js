@@ -7,9 +7,13 @@ PillPal.Views.PostForm = Backbone.View.extend({
   createPost: function(e) {
     e.preventDefault()
     var attributes = {}
-    $('input[name]').each(function() {
+    $(':input').each(function() {
+      if (this.name === "") {
+        return
+      }
       attributes[this.name] = this.value
     })
+    console.log(attributes)
   },
   render: function() {
     this.$el.append(this.template)
