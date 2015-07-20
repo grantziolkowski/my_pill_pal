@@ -4,14 +4,15 @@ PillPal.Views.Posts = Backbone.View.extend({
     index: JST["backbone/posts/templates/index"]
   },
   initialize: function() {
-    this.collection.on("reset", this.addAll())
+    this.collection.on("change", this.addAll, this)
   },
   events: {
     'click #add_post_button': 'newPostForm'
   },
   addAll: function() {
-    var ul = this.$el.find("#forum_container")
+    var ul = $(this.$el).find("#forum_container")
     this.collection.forEach(function(model) {
+      console.log("collecting")
       ul.append(new PillPal.Views.Post({
         model: model
       }).render().el)
