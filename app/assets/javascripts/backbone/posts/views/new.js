@@ -1,6 +1,9 @@
 PillPal.Views.PostForm = Backbone.View.extend({
   tagName: "form",
   template: JST["backbone/posts/templates/new"],
+  initialize: function(options) {
+    this.collection = options.collection
+  },
   events: {
     'click .button': 'createPost'
   },
@@ -13,7 +16,7 @@ PillPal.Views.PostForm = Backbone.View.extend({
       }
       attributes[this.name] = this.value
     })
-    console.log(attributes)
+    this.collection.create(attributes)
   },
   render: function() {
     this.$el.append(this.template)
