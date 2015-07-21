@@ -49,8 +49,7 @@ PillPal.Views.Medications = Backbone.View.extend({
     $("#pill_bins").children().droppable({
       drop: function(e, ui){
         var pos = $(this).offset()
-        pos.top += 3;
-        pos.left -= 50;
+        pos.top += 4;
         $(ui.draggable).offset(pos);
         var id = ui.draggable[0].dataset
         var $pill = $(ui.draggable[0])
@@ -62,7 +61,10 @@ PillPal.Views.Medications = Backbone.View.extend({
     });
   },
   newMedForm: function() {
-    var newMedFormView = new PillPal.Views.MedicationForm({userId: this.userId});
+    var newMedFormView = new PillPal.Views.MedicationForm({
+      userId: this.userId,
+      collection: this.collection
+    });
     $('body').on('click', '#medFormStep2', function(e){
       newMedFormView.secondMedForm(e);
     })

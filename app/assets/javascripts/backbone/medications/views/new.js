@@ -22,5 +22,19 @@ PillPal.Views.MedicationForm = Backbone.View.extend({
   },
   submitForm: function(e) {
     e.preventDefault()
+    var attributes = {}
+    $(':input').each(function() {
+      if (this.name === "") {
+        return
+      } else if (this.name === "user_medication_alias_prompt") {
+        return
+      }
+      attributes[this.name] = this.value
+      this.value = ""
+    })
+    console.log(attributes)
+    // console.log(this.collection)
+    this.collection.create(attributes)
+    $('#MedFormModal').foundation('reveal', 'close')
   }
 })

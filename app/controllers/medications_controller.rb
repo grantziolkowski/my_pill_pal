@@ -11,8 +11,8 @@ class MedicationsController < ApplicationController
   end
 
   def create
-    @medication = Medication.create(medication_params)
-    @user_medication = UserMedication.create(user_med_params)
+    @medication = Medication.create(name: medication_params[:name], dosage: medication_params[:dosage])
+    @user_medication = UserMedication.create(alias: user_med_params[:alias], day: user_med_params[:day], color: user_med_params[:color])
     if @user_medication.day == ""
        @user_medication.update_attributes(day: nil)
     end
@@ -24,12 +24,9 @@ class MedicationsController < ApplicationController
   end
 
   def update
-    UserMedication.update_attributes(params)
+    UserMedication.find(params[:id]).update(day: params[:day])
     @ums = UserMedication.includes(:medication).where(user: @user)
-    respond_to do |format|
-      format.html { render :index }
-      format.json { render json: @ums, methods: :medication}
-    end
+    render json: @ums, methods: :medication
   end
 
   def medication_params
