@@ -5,9 +5,9 @@ PillPal.Views.PostForm = Backbone.View.extend({
     this.collection = options.collection
   },
   events: {
-    'click .button': 'createPost'
+    'click .button': 'submitForm'
   },
-  createPost: function(e) {
+  submitForm: function(e) {
     e.preventDefault()
     var attributes = {}
     $(':input').each(function() {
@@ -17,8 +17,7 @@ PillPal.Views.PostForm = Backbone.View.extend({
       attributes[this.name] = this.value
       this.value = ""
     })
-    console.log(attributes)
-    // this.collection.create(attributes)
+    this.collection.create(attributes)
     $('#postFormModal').foundation('reveal', 'close')
   },
   render: function() {

@@ -11,8 +11,8 @@ PillPal.Views.Posts = Backbone.View.extend({
   },
   addAll: function() {
     var ul = $(this.$el).find("#forum_container")
+    ul.empty()
     this.collection.forEach(function(model) {
-      console.log("collecting")
       ul.append(new PillPal.Views.Post({
         model: model
       }).render().el)
@@ -24,7 +24,7 @@ PillPal.Views.Posts = Backbone.View.extend({
     this.$el.append(newPostFormView.render().el)
     $('#postFormModal').foundation('reveal', 'open')
     $('body').on('click', '#create_post', function(e){
-      newPostFormView.createPost(e);
+      newPostFormView.submitForm(e);
     })
   },
   render: function() {
