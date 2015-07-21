@@ -6,7 +6,7 @@ PillPal.Views.Medications = Backbone.View.extend({
   initialize: function() {
     this.username = this.collection.toJSON()[0].user.username
     this.userId = this.collection.toJSON()[0].user.id
-    this.collection.on("reset", this.addAll)
+    this.collection.on("change", this.addAll, this)
   },
   events: {
     'click #my_meds_button': 'addList',
@@ -17,7 +17,7 @@ PillPal.Views.Medications = Backbone.View.extend({
     this.$calendar = $("#pill_bins")
     this.collection.map(function(model) {
       if (model.toJSON().day != null) {
-        this.addOneCalendar(model)
+        this.addOneCalendar(model).bind(this)
       } else {
         this.addOne(model)
       }

@@ -1,6 +1,7 @@
 PillPal.Views.MedicationForm = Backbone.View.extend({
   initialize: function(options) {
-    this.userId = options.userId
+    this.userId = options.userId,
+    this.collection = options.collection
   },
   template: JST["backbone/medications/templates/new"],
   render: function() {
@@ -32,9 +33,7 @@ PillPal.Views.MedicationForm = Backbone.View.extend({
       attributes[this.name] = this.value
       this.value = ""
     })
-    console.log(attributes)
-    // console.log(this.collection)
     this.collection.create(attributes)
-    $('#MedFormModal').foundation('reveal', 'close')
+    $('#medFormModal').foundation('reveal', 'close')
   }
 })
