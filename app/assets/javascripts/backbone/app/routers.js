@@ -14,6 +14,7 @@ PillPal.Routers.Index = Backbone.Router.extend({
     index.fetch()
       .then(function() {
         var indexView = new PillPal.Views.Index({model: index});
+        indexView.listenForSignin();
         $('#nav-bar').html(indexView.render().el)
         })
      .then(loadFoundation)

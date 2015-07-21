@@ -32,6 +32,15 @@ PillPal.Views.Index = Backbone.View.extend({
     e.preventDefault();
     window.router.navigate("profile", {trigger: true});
   },
+  listenForSignin: function() {
+    var that = this
+    $('body').on('click', '.new_session', function() {
+      that.createSession()
+    })
+  },
+  createSession: function() {
+
+  },
   render: function() {
     this.$el.append(this.templates.navbar({user: this.user}))
     $('#content-container').append(this.templates.index);
