@@ -9,22 +9,24 @@ PillPal.Routers.Index = Backbone.Router.extend({
     "forum"   : "forumIndex"
   },
   root: function() {
+
     this.$container.empty()
     index = new PillPal.Models.Index()
     index.fetch().then(function() {
       var indexView = new PillPal.Views.Index({model: index});
       $('#nav-bar').html(indexView.render().el)
     })
+    .then(loadFoundation)
+
   },
   userMedications: function(id) {
-    // this.$container.empty()
     var medications = new PillPal.Models.Medications({userId: id});
     var that = this;
     medications.fetch().then(function() {
       var medsView = new PillPal.Views.Medications({
         collection: medications,
         userId: id});
-      that.$container.replaceWith(medsView.render().el)
+      that.$container.html(medsView.render().el)
       that.$container.append(medsView.addAll())
     })
   },

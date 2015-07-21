@@ -1,8 +1,4 @@
-$(document).ready(function() {
-  setTimeout(loadFoundation, 100)
-})
  //Foundation needs to load after content is rendered to DOM
-
 function loadFoundation() {
   $(document).foundation({
         orbit: {
