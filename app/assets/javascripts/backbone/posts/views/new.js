@@ -17,7 +17,8 @@ PillPal.Views.PostForm = Backbone.View.extend({
       attributes[this.name] = this.value
       this.value = ""
     })
-    this.collection.create(attributes)
+    console.log(attributes)
+    // this.collection.create(attributes)
     $('#postFormModal').foundation('reveal', 'close')
   },
   render: function() {

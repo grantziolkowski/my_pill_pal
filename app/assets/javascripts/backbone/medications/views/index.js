@@ -72,6 +72,9 @@ PillPal.Views.Medications = Backbone.View.extend({
     $('body').on('click', '#medFormAddDay', function(e){
       newMedFormView.addDayField(e);
     })
+    $('body').on('click', '.create_med', function(e){
+      newMedFormView.submitForm(e);
+    })
     this.$el.append(newMedFormView.render().el)
     $('#medFormModal').foundation('reveal', 'open')
   },

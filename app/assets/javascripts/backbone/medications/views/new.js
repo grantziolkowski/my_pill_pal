@@ -20,4 +20,7 @@ PillPal.Views.MedicationForm = Backbone.View.extend({
     $('#medFormDayPrompt').hide()
     $("#medFormSubmit").fadeIn()
   },
+  submitForm: function(e) {
+    e.preventDefault()
+  }
 })
