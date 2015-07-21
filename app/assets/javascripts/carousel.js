@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  setTimeout(loadFoundation, 50)
+  setTimeout(loadFoundation, 100)
 })
  //Foundation needs to load after content is rendered to DOM
 

@@ -1,7 +1,3 @@
-PillPal.Models.Index = Backbone.Model.extend({
-  urlRoot: "/"
-})
-
 PillPal.Models.Medication = Backbone.Model.extend({
 })
 

@@ -17,14 +17,14 @@ PillPal.Routers.Index = Backbone.Router.extend({
     })
   },
   userMedications: function(id) {
-    this.$container.empty()
+    // this.$container.empty()
     var medications = new PillPal.Models.Medications({userId: id});
     var that = this;
     medications.fetch().then(function() {
       var medsView = new PillPal.Views.Medications({
         collection: medications,
         userId: id});
-      that.$container.append(medsView.render().el)
+      that.$container.replaceWith(medsView.render().el)
       that.$container.append(medsView.addAll())
     })
   },
