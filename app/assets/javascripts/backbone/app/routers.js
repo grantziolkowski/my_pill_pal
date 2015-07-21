@@ -16,8 +16,7 @@ PillPal.Routers.Index = Backbone.Router.extend({
         var indexView = new PillPal.Views.Index({model: index});
         $('#nav-bar').html(indexView.render().el)
         })
-      .then(loadFoundation)
-
+     .then(loadFoundation)
   },
   userMedications: function(id) {
     var medications = new PillPal.Models.Medications({userId: id});
