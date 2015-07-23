@@ -12,7 +12,6 @@ class MedicationsController < ApplicationController
 
   def create
     @medication = Medication.create(name: medication_params[:name], dosage: medication_params[:dosage])
-    p user_med_params
     @user_medication = UserMedication.create(user_med_params)
     if @user_medication.day == ""
        @user_medication.update_attributes(day: nil)
