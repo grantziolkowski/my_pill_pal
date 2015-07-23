@@ -27,6 +27,7 @@
       a {
        color: #F4F4F4;
       }
+
     }
   }
 
@@ -36,6 +37,11 @@
 
       ul {
         list-style: none;
+
+        .label {
+          display: none;
+        }
+
       }
     }
   }
