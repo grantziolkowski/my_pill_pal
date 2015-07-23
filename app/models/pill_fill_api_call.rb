@@ -1,10 +1,5 @@
 require 'open-uri'
 class PillFillApiCall
-  def initialize(med_name)
-    @id = request_by_name(med_name)
-    request_by_id(@id)
-  end
-
   def request_by_name(med_name)
    response = open("https://developer.pillfill.com:443/service/v1/products?term=#{med_name}&type=name&page=0",
     "api_key" => "7a9a6eec0bbbada9bb52ac3cff6e6a93")
