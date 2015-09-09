@@ -1,7 +1,7 @@
 PillPal.Views.Medication = Backbone.View.extend({
   template: JST["backbone/medications/templates/show"],
   events: {
-    'mouseover .med_buttons': 'showLabel'
+    'click .med_buttons': 'showLabel'
   },
   render: function () {
     this.$el.append(this.template(this.model.toJSON()));
@@ -21,7 +21,8 @@ PillPal.Views.Medication = Backbone.View.extend({
     this.$el.find("a.button").css({"background-color": this.model.toJSON().color})
   },
   showLabel: function() {
-   var label = this.$el.children().find("[data-id='" + this.model.toJSON().id + "']")
-   label.toggle()
+    $('#medInfoModal').foundation('reveal', 'open')
+  //  var label = this.$el.children().find("[data-id='" + this.model.toJSON().id + "']")
+  //  label.toggle()
   }
 })

@@ -18,7 +18,7 @@ class PillFillApiCall
    response.map do |line|
     string << line
    end
-   info = JSON.parse(string)[0]["splEntry"]["patientInformation"]["section"][2]["html"] #information for patients
+   info = JSON.parse(string)[0]["splEntry"]["patientInformation"]["section"][3]["html"] #information for patients
    info
   end
 
