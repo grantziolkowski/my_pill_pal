@@ -32,11 +32,15 @@
   }
 
   #pill_bins {
-    .panel {
       height: 10em;
+      background-color: #FAFAFA;
+      .bin {
+        height: 100%;
+        border-right: solid black 1px;
 
       ul {
         list-style: none;
+
 
         .label {
           display: none;
