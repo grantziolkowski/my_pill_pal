@@ -1,7 +1,13 @@
+ <div id="content-container">
   <div id="left" class="small-3 columns left">
     <p class="bold">Your Meds.</p>
     <p class="bold">Your Online Resource.</p>
-    <a href="#" class="orange_gradient button modal" id="get_started" data-reveal-id="signInModal">Get Started</a>
+    <% if (!user) { %>
+      <a href="#" class="orange_gradient button modal" id="get_started" data-reveal-id="signInModal">Get Started</a>
+    <% } else { %>
+       <a href="/profile" class="orange_gradient button modal" id="button_to_profile">Get Started</a>
+    <% } %>
+
     <div id="summary">
       My Pill Pal is your medical resource for community, scheduling and information all in one place!
     </div>
@@ -26,3 +32,4 @@
       </li>
     </ul>
   </div>
+</div>

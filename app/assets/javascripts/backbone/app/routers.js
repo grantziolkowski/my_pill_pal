@@ -1,6 +1,6 @@
 PillPal.Routers.Index = Backbone.Router.extend({
   initialize: function() {
-    this.$container = $('#content-container')
+    this.$rootContainer = $('#container')
     this.user = null
   },
   routes: {
@@ -9,18 +9,24 @@ PillPal.Routers.Index = Backbone.Router.extend({
     "forum"   : "forumIndex"
   },
   root: function() {
-    this.$container.empty()
+    this.$rootContainer.empty()
+    var that = this;
     index = new PillPal.Models.Index()
     index.fetch()
       .then(function() {
         var indexView = new PillPal.Views.Index({model: index});
-        $('#nav-bar').html(indexView.render().el)
+        that.$rootContainer.prepend(indexView.renderNav().el)
+        that.$rootContainer.append(indexView.render().el)
         })
      .then(loadFoundation)
   },
   userMedications: function(id) {
+    this.$container = $('#content-container')
+    this.$container.empty();
     var medications = new PillPal.Models.Medications({userId: id});
     var that = this;
+    var indexView = new PillPal.Views.Index({model: {id: id}});
+    that.$rootContainer.replaceWith(indexView.renderNav().el)
     medications.fetch().then(function() {
       var medsView = new PillPal.Views.Medications({
         collection: medications,
@@ -30,6 +36,7 @@ PillPal.Routers.Index = Backbone.Router.extend({
     })
   },
   forumIndex: function() {
+    this.$container = $('#content-container')
     this.$container.empty()
     var posts = new PillPal.Models.Posts()
     var that = this;

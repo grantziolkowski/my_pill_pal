@@ -1,3 +1,4 @@
+ <nav id="nav-bar">
 <div class="icon-bar five-up icon-text">
   <a href="/" class="item" id="home_link">
       <label class="nav-text">My Pill Pal</label>
@@ -10,21 +11,26 @@
     <img src="assets/fi-video.svg">
     <label>Demo</label>
   </a>
-  <a href="/profile" class="item" id="profile_link">
-     <img src="assets/fi-torso.svg">
-     <label>Profile</label>
-  </a>
-  <% if (user === null) { %>
+  <% if (!user) { %>
+    <a class="item signin_out_link modal" href="#" data-reveal-id="signInModal">
+       <img src="assets/fi-torso.svg">
+       <label>Profile</label>
+       <%= JST["backbone/app/templates/_signin_modal"]({}) %>
+    </a>
     <a class="item signin_out_link modal" href="#" data-reveal-id="signInModal">
       <img src="assets/fi-compass.svg">
       <label>Sign In</label>
       <%= JST["backbone/app/templates/_signin_modal"]({}) %>
     </a>
   <% } else { %>
+    <a href="/profile" class="item" id="profile_link">
+      <img src="assets/fi-torso.svg">
+      <label>Profile</label>
+    </a>
     <a href="/signout" class="item" class="signin_out_link">
        <img src="assets/fi-eject.svg">
        <label>Sign Out</label>
     </a>
   <% } %>
 </div>
-
+</nav>

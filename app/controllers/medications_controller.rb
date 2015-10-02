@@ -1,5 +1,7 @@
 class MedicationsController < ApplicationController
   skip_before_filter  :verify_authenticity_token
+  before_action :require_signin
+
   def index
       user = current_user
       user.add_sample if !user.user_medications
