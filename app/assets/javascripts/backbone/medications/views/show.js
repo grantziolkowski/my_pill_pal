@@ -17,7 +17,8 @@ PillPal.Views.Medication = Backbone.View.extend({
     return this;
   },
   color: function () {
-    this.$el.find("a.button").css({"background-color": this.model.toJSON().color})
+    var $pill = this.$el.find("[data-id='" + this.model.toJSON().id + "']")
+    $pill.children().css({"background-color": this.model.toJSON().color})
   },
   showLabel: function() {
     $('.label').hide()
