@@ -4,11 +4,13 @@
 
 #profile-header {
   display: inline;
-  margin: 4%;
+  margin: 10%;
 
-  h1 {
-    font-family: "Oleo Script";
+
+  #user_welcome {
+    font-family: "Raleway";
     float: right;
+    margin-right: 10%;
   }
 }
 
@@ -51,10 +53,6 @@
   }
 }
 
-#user_welcome {
-  text-align: right;
-  margin-right: 3%;
-}
 
 #pill_list {
   display: none;
