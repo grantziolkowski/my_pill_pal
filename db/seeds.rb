@@ -20,7 +20,7 @@ UserMedication.create(user: user, medication: m5, alias: 'Omeprazole', color: "#
 # UserMedication.create(user: user, medication: m6)
 # UserMedication.create(user: user, medication: m7)
 UserMedication.create(user: user, medication: m8, alias: 'Metformin')
-UserMedication.create(user: user, medication: m9, color: "#f4f3f2")
+UserMedication.create(user: user, medication: m9, color: "#3092d6")
 UserMedication.create(user: user, medication: m10, color: "#333333")
 
 p1 = Post.create(author: user, title: "Don't use Metformin", content: "I had a very strong reaction to Metformin. Muscle pain or weakness; numb or cold feeling in your arms and legs; trouble breathing; feeling dizzy, light-headed, tired, or very weak; stomach pain, nausea with vomiting; or slow or uneven heart rate.")
