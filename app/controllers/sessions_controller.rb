@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to profile_path
     else
       flash[:notice] = "Bad Username or Password"
-      redirect_to user_medications_path(current_user)
+      redirect_to root_path
     end
   end
 
