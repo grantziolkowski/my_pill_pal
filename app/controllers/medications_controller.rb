@@ -18,7 +18,7 @@ class MedicationsController < ApplicationController
     if @user_medication.day == ""
        @user_medication.update_attributes(day: nil)
     end
-    @ums = UserMedication.includes(:medication).where(user: current_user)
+    @ums = UserMedication.includes(:medication).where(user: current_user).last
     render json: @ums, methods: [:medication, :user]
   end
 

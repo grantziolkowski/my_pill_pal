@@ -6,7 +6,6 @@ PillPal.Views.Medication = Backbone.View.extend({
   render: function () {
     this.$el.append(this.template(this.model.toJSON()));
     this.color();
-    // this.delegateEvents();
     return this;
   },
   renderCal: function() {
@@ -21,7 +20,6 @@ PillPal.Views.Medication = Backbone.View.extend({
     this.$el.find("a.button").css({"background-color": this.model.toJSON().color})
   },
   showLabel: function() {
-    // $('#medInfoModal').foundation('reveal', 'open')
     $('.label').hide()
    var label = this.$el.children().find("[data-id='" + this.model.toJSON().id + "']")
    label.toggle()
