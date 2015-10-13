@@ -9,7 +9,8 @@ class Medication < ActiveRecord::Base
   def get_pill_fill_info
     api_call =  PillFillApiCall.new
     med_id = api_call.request_by_name(self.name)
-    label = api_call.request_by_id(med_id)
-    self.label = label
+    if api_call.request_by_id(med_id)
+      self.label = api_call.request_by_id(med_id)
+    end
   end
 end

@@ -50,7 +50,6 @@ PillPal.Views.Medications = Backbone.View.extend({
       drop: function(e, ui){
         var pos = $(this).offset()
         pos.top += 10;
-        console.log($(ui.draggable))
         $(ui.draggable).offset(pos);
         var id = ui.draggable[0].dataset
         var $pill = $(ui.draggable[0])
