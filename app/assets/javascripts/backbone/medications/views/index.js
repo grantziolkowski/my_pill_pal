@@ -6,7 +6,7 @@ PillPal.Views.Medications = Backbone.View.extend({
   initialize: function() {
     this.username = this.collection.toJSON()[0].user.username
     this.userId = this.collection.toJSON()[0].user.id
-    this.collection.on("change", this.addAll, this)
+    // this.collection.on("change", this.addAll, this)
   },
   events: {
     'click #my_meds_button': 'addList',
@@ -49,14 +49,15 @@ PillPal.Views.Medications = Backbone.View.extend({
     $("#pill_bins").children().droppable({
       drop: function(e, ui){
         var pos = $(this).offset()
-        pos.top += 4;
+        pos.top += 10;
+        console.log($(ui.draggable))
         $(ui.draggable).offset(pos);
         var id = ui.draggable[0].dataset
         var $pill = $(ui.draggable[0])
         $pill.find("a.button").removeClass("small").addClass("tiny")
         var medModel = that.collection.get(id);
-        medModel.save({day: e.target.childNodes[0].dataset.day}, {error: function(response){
-        }})
+        medModel.save({day: e.target.childNodes[0].dataset.day}, {error: function(response){ }
+        })
       }
     });
   },
